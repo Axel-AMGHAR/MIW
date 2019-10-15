@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<script type="text/javascript" src="biblio.js"></script>	
+<body>
+
+    <script>
+        
+        function exo2(){
+        
+            nombre=prompt("saisir un nombre :","5.5");
+            let f = window.open("","nom_popup","menubar=no, status=no, scrollbars=no, width=700, height=700");
+            let value = "est ";
+            if (entier_positif(nombre))
+                value += is_pair(nombre)?"pair":"impair";
+            else 
+                value = "n'est pas un entier positif";
+		    f.document.write("Le nombre que vous avez saisi " + value );
+
+        }
+        
+        function exo3(){
+            let nombre1 = 2;
+            let nombre2 = 6;
+            let nombre3 = 1;
+            
+            console.log("somme : " + eval(nombre1+nombre2+nombre3) );
+            console.log("moyenne : " + eval(nombre1+nombre2+nombre3)/3);
+            console.log("plus grand : " + Math.max(nombre1,nombre2,nombre3));
+            console.log("plus petit : " + Math.min(nombre1,nombre2,nombre3));
+            console.log("nombre dans l'odre croissant: " + [nombre1,nombre2,nombre3].sort());
+        }
+        
+        function exo4(){
+            let nombre = parseInt(prompt("entrer un entier positif :","A"));
+            
+            if (entier_positif(nombre))
+                console.log("somme des " + nombre + " premiers nombres= " + eval(nombre*(nombre+1)/2));
+            else {
+                alert("vous n'avez pas entré un entier positif ");
+                exo4();
+            }
+        }
+        
+        
+        function choix_valeur_surface (type_surface){
+            
+            let cote,longueur,rayon;
+            switch (type_surface) {
+                case "carre":
+                    cote = parseInt(prompt("entrer la valeur d'un cote (entier)","5"));
+                    if (!entier_positif(cote)) {
+                        alert("vous n'avez pas rentré un entier naturel, veuillez recommencer");
+                        choix_valeur_surface(type_surface);
+                    }
+                    console.log("la surface du carré est de "+ surf_carre(cote) + "m²");
+                    break;
+                    
+                case "rectangle":
+                    cote = parseInt(prompt("entrer la valeur d'un cote (entier)","5"));
+                    longueur = parseInt(prompt("entrer la longeur (entier)","5"));
+                    if (!entier_positif(cote) || !entier_positif(longueur)){
+                        alert("vous n'avez pas rentré un entier naturel, veuillez recommencer");
+                        choix_valeur_surface(type_surface);
+                    }
+                    console.log("la surface du rectangle est de "+ surf_rect(cote,longueur) + "m²");
+                    break; 
+                    
+                case "cercle":
+                    rayon = parseInt(prompt("entrer la valeur du rayon (entier)","5"));
+                    if (!entier_positif(rayon)){
+                        alert("vous n'avez pas rentré un entier naturel, veuillez recommencer");
+                        choix_valeur_surface(type_surface);
+                    }
+                    console.log("la surface du cercle est de "+ surf_cercle(rayon) + "m²");
+                    break;
+                    
+                default:
+                    alert("vous n'avez pas rentré une surface valide");
+                    exo5();
+            }
+        }
+        
+        function exo5(){
+            choix_valeur_surface(prompt("enter le type de surface a calculer en minuscules (carre, rectangle, cercle)","carre"));
+        }
+        
+        function exo6(){
+            let mot_de_passe = prompt("saisir le mot de passe avec au moins un chiffre ,une lettre et un caractére special (8 caractéres minimum)","");
+            let reg_chiffre = /[0-9]/;
+            let reg_lettre = /[a-zA-Z]/;
+            let reg_caractere = /[^\w]/;
+            if(reg_caractere.test(mot_de_passe) && reg_lettre.test(mot_de_passe) && reg_chiffre.test(mot_de_passe) && (mot_de_passe.length >= 8))
+                exo4();
+            else ;
+                window.location.reload();
+            
+        }
+        
+        function exo7(){
+            
+        }
+        
+        exo7();
+        
+    </script>
+    
+</body>
+</html>
