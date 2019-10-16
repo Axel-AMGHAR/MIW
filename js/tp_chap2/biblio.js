@@ -41,3 +41,18 @@ function surf_rect(c,l){
 function surf_cercle(r){
     return eval(3.14*(r*r));
 }
+
+function maxi(){
+    if(arguments.length == 0) throw new Error ("vous n'avez pas passé de paramétres");
+    let nb_max = null;
+
+
+    for (let i =0; i < arguments.length;i++){
+    
+        if (isNaN(arguments[i])){
+            throw new Error ("le tableau doit contenir uniquement des nombres");
+        } 
+        if (nb_max < arguments[i]) nb_max = arguments[i];
+    }
+    return nb_max; 
+}

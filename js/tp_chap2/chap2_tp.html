@@ -98,10 +98,61 @@
         }
         
         function exo7(){
-            
+            for (let i = 1;i<=50;i++){
+                console.log("carré de "+ i + " = " +i*i);
+            }
         }
         
-        exo7();
+        function exo8(){
+            let n1 =  parseInt(prompt("saisir un nombre entier",20));
+            
+            let n2 = parseInt(prompt("saisir un nombre entier inférieur au précédent ("+ n1+")" ,22))
+            if (n2>=n1){
+                alert(n1 + " est supérieur ou égal à " + n2 + " veuillez recommencer");
+                exo8();
+            }
+            
+            document.write("<table style=\"border: 1px solid black \"><tbody>");
+            for (let y = n2;y<n1;y++){
+                if(y%2 == 0) document.write("<tr><td>"+ y +"</td></tr>");
+
+            }
+            document.write("</tbody></table>");
+        }
+        
+        function exo9(){
+            let nombre = parseInt(prompt("saisir un entier de 2 a 9","3"));
+            document.write("<table style=\"border: 1px solid black; margin: auto; \"><tbody>");
+            for (let i=1;i<=9;i++){
+                document.write("<tr><td>"+i+"*"+nombre+"=</td>");
+                document.write("<td>"+ i*nombre +"</td></tr>");
+
+            }
+            document.write("</tbody></table>");
+        }
+        
+        function exo10(){
+            console.log(maxi(2,4,7,3.14,0,-1,7.17));
+            console.log(maxi("a",4));
+            console.log(maxi());
+        }
+        
+        //affiche le nom premnom et jour de la semaine de la date de naissance dans une nouvelle fenêtre
+        function exo11(){
+            let nom = prompt("Entrer votre nom","amghar");
+            let prenom = prompt("Entrer votre prenom","axel");
+            let date_naissance = prompt("Entrer votre date de naissance au format JJ/MM/AAAA","23/11/1999");
+            
+            let tab_date = date_naissance.split("/");
+            let date = new Date(parseInt(tab_date[2]),parseInt(tab_date[1])-1,tab_date[0]);
+            let tab_jour=new Array("Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
+            
+            let f = window.open("","nom_popup","menubar=no, status=no, scrollbars=no, width=700, height=700");
+            f.document.write("<h1>"+nom+" "+prenom+"</h1>");
+            f.document.write("<h2>jour de la semaine de votre date de naissance : "+ tab_jour[date.getDay()]+"</h2>");
+        }
+        
+        exo11();
         
     </script>
     
