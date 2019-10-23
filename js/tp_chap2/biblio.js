@@ -18,9 +18,10 @@ function arrondi(nombre,x){
 }
             
 //return nombre
-function nb_occurences (occurence,chaine){
+String.prototype.nb_occurence = 
+function nb_occurences (occurence){
     var regex = new RegExp(occurence,"g");
-    return chaine.match(regex).length;
+    return this.match(regex)?this.match(regex).length:0;
 }
 
 //return chaine

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="gestion_personne.js"></script>
+    </head>   
+<body>
+    <input class="display" type="button" value="Display" />
+    <input class="add" type="button" value="add" />
+    <input class="delete" type="button" value="Delete" />
+    <input class="reinit" type="button" value="Reinitialize" />
+    
+    <h3>----Liste des personnes----</h3>
+    <div class="liste">
+    </div>
+  
+    <script>
+        const liste_personne = new Gestion_liste_personne();
+        
+        function ajouter(){
+            let nom = prompt("Ajoutez un nom");
+            
+            if (nom.length = null || (nom.length < 2 || nom.length > 20)){
+                alert("le nom doit être composé de 2 à 20 caractéres, veuillez recommencer");
+                return ajouter();
+            }
+            nom = nom.charAt(0).toUpperCase()+nom.substr(1,nom.length).toLowerCase();
+            liste_personne.ajout(nom);
+            liste_personne.display($(".liste"));
+        }
+        
+        function delete_nom(){
+            let nom = prompt("Saisir un nom a supprimer").toLowerCase();
+            
+            liste_personne.delete(nom);
+            liste_personne.display($(".liste"));
+        }
+        
+        function reinit(){
+            liste_personne.reinitialize();
+            liste_personne.display($(".liste"));
+        }
+        
+        $(".add").click(function(){ajouter();});
+        $(".delete").click(function(){delete_nom();});
+        $(".reinit").click(function(){reinit();});
+    </script>
+    
+</body>
+</html>
