@@ -49,7 +49,6 @@ class Gestion_liste_personne {
     
     reinitialize (){
         let pointeur_suiv;
-        let i =0;
         while (this.p_debut != null){
             delete this.p_debut.nom;
             pointeur_suiv = this.p_debut.pSuivant;
