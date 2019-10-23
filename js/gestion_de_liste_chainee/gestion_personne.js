@@ -25,22 +25,25 @@ class Gestion_liste_personne {
     
     delete (nom){
         let pointeur = this.p_debut;
-        let pointeur_prec = this.p_debut;
+        let p_suivant;
+        let p_prec;
         while(pointeur != null && pointeur.nom.toLowerCase() != nom){
-            pointeur_prec = pointeur;
+            p_prec = pointeur;
             pointeur = pointeur.pSuivant;
         }
 
         if (pointeur == null){
             alert("le nom n'est pas présent dans la liste (la liste est peut être vide)");
+            delete(prompt("veuillez réesayer"));
             return;
-        } else if (this.p_debut.pSuivant == null) {
-            console.log("t");
-            this.p_debut = pointeur.pSuivant;
-        }
-         else {
-            pointeur_prec = pointeur.pSuivant;
-            pointeur.pSuivant = null;
+        } else {
+            p_suivant = pointeur.pSuivant;
+            delete pointeur.pSuivant;
+            delete pointeur.nom;
+            if (pointeur == this.p_debut)
+                this.p_debut = p_suivant;
+            else 
+                p_prec.pSuivant = p_suivant;
         }
     }
     
@@ -52,7 +55,6 @@ class Gestion_liste_personne {
             pointeur_suiv = this.p_debut.pSuivant;
             delete this.p_debut.pSuivant;
             this.p_debut = pointeur_suiv;
-            console.log(i++);
         }
     }  
 }
