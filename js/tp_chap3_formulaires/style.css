@@ -1,0 +1,16 @@
+.form_carte {
+    display: flex; 
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+}
+
+.ville{
+    text-align-last: center;
+}
+
+#macarte {
+    width:80%;
+    height:900px;
+    margin: auto;
+}
