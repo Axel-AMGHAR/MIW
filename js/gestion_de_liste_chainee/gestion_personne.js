@@ -48,15 +48,13 @@ class Gestion_liste_personne {
         let pointeur_suiv;
         let i =0;
         while (this.p_debut != null){
-            this.p_debut.nom = null;
+            delete this.p_debut.nom;
             pointeur_suiv = this.p_debut.pSuivant;
-            this.p_debut.pSuivant = null;
+            delete this.p_debut.pSuivant;
             this.p_debut = pointeur_suiv;
             console.log(i++);
-            
         }
-    }
-    
+    }  
 }
 
 class Tpersonne {
