@@ -22,7 +22,7 @@ class Gestion_liste_personne {
             pointeur = pointeur.pSuivant;
         }
     }
-    
+
     delete (nom){
         let pointeur = this.p_debut;
         let p_suivant;
