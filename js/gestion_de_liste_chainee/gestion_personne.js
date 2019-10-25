@@ -18,7 +18,7 @@ class Gestion_liste_personne {
         let pointeur = this.p_debut;
         class_div.html("");
         while(pointeur != null){
-            class_div.append('<div>'+pointeur.nom+'</div>');
+            class_div.append('<div class="animated  flipInX delay-10s">'+pointeur.nom+'</div>');
             pointeur = pointeur.pSuivant;
         }
     }
