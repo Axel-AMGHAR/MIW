@@ -1,5 +1,5 @@
 class Gestion_liste_personne {
-    
+
     constructor (){
         this.p_debut = null;
     }
