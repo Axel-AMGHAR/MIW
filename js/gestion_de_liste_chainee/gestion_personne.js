@@ -46,7 +46,7 @@ class Gestion_liste_personne {
                 p_prec.pSuivant = p_suivant;
         }
     }
-    
+
     reinitialize (){
         let pointeur_suiv;
         while (this.p_debut != null){
