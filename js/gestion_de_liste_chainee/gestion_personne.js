@@ -13,7 +13,7 @@ class Gestion_liste_personne {
             this.p_debut = Pnouveau;
         }
     }
-    
+
     display (class_div){
         let pointeur = this.p_debut;
         class_div.html("");
