@@ -1,4 +1,3 @@
-/*yo*/
 class Gestion_liste_personne {
 
     constructor (){

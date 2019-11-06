@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        Object.prototype.each= 
+            function(fonction){
+                for(i in this){
+                    if(this.hasOwnProperty(i))
+                        fonction(i,this[i]);
+                }
+            }
+        
+        let t = {
+            "nom":"AMGHAR",
+            "prenom":"Axel"
+        };
+        
+        t.each(function(a,b){
+            console.log(a+'****');
+        });
+        
+        t.each(function(a,b){
+            console.log('****'+b);
+        });
+        
+    </script>
+</head>
+</html>
