@@ -8,3 +8,6 @@
 - for sur les labels
 - titre dans le header
 - champ required formulaire, placeholder, ancre (pour aller directement la ou le champ est faux), mettre les names, mettre un bon type pour les input
+
+
+https://codepen.io/jim005/pen/zYYWZgW?editors=1100
