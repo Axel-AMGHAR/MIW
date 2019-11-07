@@ -1,0 +1,28 @@
+$breakpoint: 768px;
+$bg: #B4D143;
+$bg_darker: darken($bg, 20%);
+$bg_light: lighten($bg, 20%);
+
+.barrnav {
+	ul {
+		display: flex;
+		flex-direction: column;
+		background-color: $bg;
+	}
+	img.hamb {
+		width: 50px;
+		height: 50px;
+	}
+	li {
+		list-style-type: none;
+		&:hover {
+			background-color: $bg_darker;
+		}
+	}
+	@media screen and (min-width: $breakpoint) {
+		ul {
+			flex-direction: row;
+			justify-content: space-around
+		}
+	}
+}
