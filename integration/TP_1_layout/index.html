@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Articles de l'IUT aix-marseille université" />
     <title>MIW - Day 1</title>
     <link href="//fonts.googleapis.com/css?family=RobotoDraft:100,300,400,500" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
@@ -11,9 +12,12 @@
 
 <body>
     <div class="container">
-        <header>
-                <img src="https://iut.univ-amu.fr/sites/iut.univ-amu.fr/themes/web_template/images/logo_iut.png" alt="logo_iut" title="logo_iut">
-                <nav>
+        <div>
+        <header id="header">
+            <div class="txt_center">
+                <img src="https://iut.univ-amu.fr/sites/iut.univ-amu.fr/themes/web_template/images/logo_iut.png" alt="logo_iut" title="logo_iut" id="logo_iut">
+            </div>
+                <nav class="txt_center">
                     <ul>
                         <li>
                             <a href="#">Accueil</a>
@@ -24,13 +28,12 @@
                     </ul>
                 </nav>
         </header>
-    </div>
-    
+        </div>
+
     <div id="region-top">
-            
-        <div class="article_left container">
+        <div class="article-left">
             <article>
-                <img src="https://think.storage.googleapis.com/images/mm-guide-be-there-hp-hero.jpg" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing" >
+                <img src="https://think.storage.googleapis.com/images/mm-guide-be-there-hp-hero.jpg" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing" title="Lorem ipsum dolor sit amet, consectetuer adipiscing">
                 <div>
                     <h1>
                         <a href="#">Titre de l'article 11 </a>
@@ -40,10 +43,9 @@
             </article>
         </div>
 
-        <div class="container">
-            <div class="article_right">
+            <div class="article-right">
                 <article>
-                    <img src="https://think.storage.googleapis.com/images/winning-omni-channel-shoppers-micro-moments-bn.jpg" alt="micro_moments" >
+                    <img src="https://think.storage.googleapis.com/images/winning-omni-channel-shoppers-micro-moments-bn.jpg" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing" title="Lorem ipsum dolor sit amet, consectetuer adipiscing" >
                     <div>
                         <h2>
                             <a href="#">Video Micro-Moments: What Do They Mean for Your Video Strategy?</a>
@@ -57,7 +59,7 @@
                 </article>
 
                 <article>
-                    <img src="https://think.storage.googleapis.com/images/video-micro-moments-what-do-they-mean-for-your-video-strategy-lg.jpg" alt="omni_channel" >
+                    <img src="https://think.storage.googleapis.com/images/video-micro-moments-what-do-they-mean-for-your-video-strategy-lg.jpg" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing" title="Lorem ipsum dolor sit amet, consectetuer adipiscing" >
                     <div>
                         <h2>
                             <a href="#">Winning Omni-Channel Shoppers in Their Micro-Moments</a>
@@ -71,12 +73,10 @@
                 </article>
             </div>
         </div>
-    </div>
-            
-    <div class="container">
-        <div id="region-main">
+        
+        <div  id="region-main">
             <article>
-                <img src="https://think.storage.googleapis.com/images/mm_betterstrategy_454x255.png" alt="article_annexe1"/>
+                <img src="https://think.storage.googleapis.com/images/mm_betterstrategy_454x255.png" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing" title="Lorem ipsum dolor sit amet, consectetuer adipiscing"/>
                 <div>
                     <h2>Titre de l'article</h2>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
@@ -88,7 +88,7 @@
                 </div>
             </article>
             <article>
-                <img src="https://think.storage.googleapis.com/images/micro-moments-shopper-journey-report-harvard-business-review-1-sm.jpg" alt="article_annexe2"/>
+                <img src="https://think.storage.googleapis.com/images/micro-moments-shopper-journey-report-harvard-business-review-1-sm.jpg" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing" title="Lorem ipsum dolor sit amet, consectetuer adipiscing"/>
                 <div>
                     <h2>Titre de l'article</h2>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
@@ -101,7 +101,7 @@
                 </div>
             </article>
             <article>
-                <img src="https://think.storage.googleapis.com/images/how-moms-use-youtube-videos-new-trends-and-insights-sm-1.jpg" alt="article_annexe3"/>
+                <img src="https://think.storage.googleapis.com/images/how-moms-use-youtube-videos-new-trends-and-insights-sm-1.jpg" alt="Lorem ipsum dolor sit amet, consectetuer adipiscing" title="Lorem ipsum dolor sit amet, consectetuer adipiscing"/>
                 <div>
                     <h2>Titre de l'article</h2>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
@@ -113,38 +113,40 @@
                 </div>
             </article>
         </div>
-    </div>
     
-    <div class="container">
-        <div id="region-sidebar">
+        <div id="region-sidebar" class="txt_center">
 
-            <h1>Contactez-nous</h1>
+            <h2>Contactez-nous</h2>
 
-            <form action="#">
+            <form action="#" method="post">
                 <div>
                     <label for="nom">Nom :</label>
-                    <input id="nom" type="text" />
+                    <input id="nom" name="nom" type="text" required/>
                 </div>
                 <div>
                     <label for="prenom">Prénom :</label>
-                    <input id="prenom" type="text" />
+                    <input id="prenom" name="prenom" type="text" required/>
                 </div>
                 <div>
                     <label for="societe">Société :</label>
-                    <input id="societe" type="text" />
+                    <input id="societe" name="societe" type="text" required/>
                 </div>
                 <div>
                     <label for="tel">Téléphone :</label>
-                    <input id="tel" type="text" />
+                    <input id="tel" name="tel" type="tel" required/>
                 </div>
                 <div>
                     <label for="email">Email :</label>
-                    <input id="email" type="text" />
+                    <input id="email" name="email" type="email" required/>
                 </div>
                 <input type="submit" value="Envoyer" />
             </form>
         </div>
+        <footer>
+        </footer>
     </div>
+
 </body>
+
 
 </html>

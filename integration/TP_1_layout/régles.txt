@@ -1,13 +1,15 @@
 - Un seul H1
 - Bon nommage des classes/index
-- ne pas mettre le style dans les balises html ou les attributs widht ... dans les images pas exmemple
+- ne pas mettre le style dans les balises html ou les attributs widht ... dans les images pas exemple
 - Pas de ligne avant le Doctype 
-- En général bonne indentation - pas de lignes en plus
+- pas de lignes en plus( En général bonne indentation )  ///////TODO
 - alt et title sur les images
 - meta description
 - for sur les labels
-- titre dans le header
+- title dans le head
 - champ required formulaire, placeholder, ancre (pour aller directement la ou le champ est faux), mettre les names, mettre un bon type pour les input
+- method post dans les formulaires
+- site responsive 
 
 
 https://codepen.io/jim005/pen/zYYWZgW?editors=1100
