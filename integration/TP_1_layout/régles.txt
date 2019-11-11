@@ -2,7 +2,7 @@
 - Bon nommage des classes/index
 - ne pas mettre le style dans les balises html ou les attributs widht ... dans les images pas exemple
 - Pas de ligne avant le Doctype 
-- pas de lignes en plus( En général bonne indentation )  ///////TODO
+- pas de lignes en plus( En général bonne indentation )
 - alt et title sur les images
 - meta description
 - for sur les labels

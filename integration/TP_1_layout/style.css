@@ -43,8 +43,6 @@ header {
     height: 60px;
 }
 
-
-
 .article-right img{
     width: 200px;
 }
@@ -110,15 +108,16 @@ header nav a:hover {
     color: white;
 }
 
-    #region-top .article-left div {
-        position: absolute;
-        bottom: 40px;
-        left: 40px;
-        background-color: #ff7043;
-        padding: 2em;
-        width: 300px;
-        color: white;
-    }
+#region-top .article-left div {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    background-color: #ff7043;
+    padding: 2em;
+    width: 300px;
+    color: white;
+}
+
 #region-top .article-right article div {
     padding: 0 1em 0 1em;
     font-size: 0.9em;
@@ -175,7 +174,6 @@ header nav a:hover {
         font-size: 0.9em;
         margin: 0;
     }
-
 }
 
 ul.tags {
