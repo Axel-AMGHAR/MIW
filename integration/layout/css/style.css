@@ -106,14 +106,17 @@ Classes génériques
 body {
     color: white;
 }
+
 /* CSS version mobile */
+
+/* Header */
 
 header {
     background-color: #3E4249;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2%;
+    padding: 5% 1%;
 }
 
 .logo_lauzanne {
@@ -124,7 +127,7 @@ header {
     width: 25%;
 }
 
-.temperature, .flaticon-weather {
+.flaticon-weather {
     display: none;
 }
 
@@ -134,11 +137,47 @@ header {
 }
 
 .flaticon-search {
-    padding-right: 10px;
+    padding-right: 20px;
 }
 
 .fi {
-    font-size: 32px;
+    font-size: 30px;
 }
 
+/* Image de fond */
+
+.font_acceuil {
+    position: relative;
+    background-image: url("../img/lauzanne_img.jpg");
+    background-position: top 0 right 50%;
+    background-size: cover;
+    height: 600px;
 }
+
+.social_networks {
+    display: none;
+}
+
+.navigation_page {
+    position: absolute;
+    bottom: -100px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+}
+
+.link_nav_page {
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    margin: 1px 10%;
+    padding: 5% 0;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+}
+
