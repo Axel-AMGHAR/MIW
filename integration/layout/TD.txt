@@ -1,0 +1,7 @@
+passer dans audits de l'inspecteur d'element google:{
+    perf 100
+    acces 95
+    best practices 93
+    seo 100
+    w3C NoErrors
+}

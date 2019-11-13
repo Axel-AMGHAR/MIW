@@ -1,15 +1,17 @@
 - Un seul H1
-- Bon nommage des classes/index
+- Bon nommage des classes (pas d'index qui sont résévès pour le js)
 - ne pas mettre le style dans les balises html ou les attributs widht ... dans les images pas exemple
 - Pas de ligne avant le Doctype 
 - pas de lignes en plus( En général bonne indentation )
-- alt et title sur les images
+- alt sur les images (les title peuvent être utilisés sur les liens)
 - meta description
 - for sur les labels
 - title dans le head
 - champ required formulaire, placeholder, ancre (pour aller directement la ou le champ est faux), mettre les names, mettre un bon type pour les input
 - method post dans les formulaires
 - site responsive 
-
+- ancre sur les menus
+- commentaires css
+- reset css
 
 https://codepen.io/jim005/pen/zYYWZgW?editors=1100
