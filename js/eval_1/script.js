@@ -6,14 +6,30 @@ onload = function (){
             
     const exo1 = () => {
         
-        document.getElementsByTagName("body")[0].innerHTML= `
-            <form method="post" action="">
-                <label for="ISBN-13">ISBN-13 : </label>
-                <input id="ISBN-13" type="text" value="978-2-86889-006-1" required/><br/>
-                <input id="submit" type="submit"/>
-                <input id="validity" type="text" readonly/>
-            </form>
-        `;
+        let body = document.getElementsByTagName("body")[0];
+        let form = document.createElement('form');
+        let label = document.createElement('label');
+        label.setAttribute('for','ISBN-13');
+        label.textContent = 'ISBN-13 :';
+        let input_isbn = document.createElement('input');
+        input_isbn.setAttribute('type','text');
+        input_isbn.setAttribute('id','ISBN-13');
+        input_isbn.setAttribute('value','978-2-86889-006-1');
+        input_isbn.setAttribute('required','');
+        let br = document.createElement('br');
+        let input_submit = document.createElement('input');
+        input_submit.setAttribute('type','submit');
+        input_submit.setAttribute('id','submit');
+        let input_validity = document.createElement('input');
+        input_validity.setAttribute('type','text');
+        input_validity.setAttribute('id','validity');
+        input_validity.setAttribute('readonly','');
+        form.appendChild(label);
+        form.appendChild(input_isbn);
+        form.appendChild(br);
+        form.appendChild(input_submit);
+        form.appendChild(input_validity);
+        body.appendChild(form);
 
         let reg = {
             reg_ISBN_13 : /^(978|979)-\d-\d{5}-\d{3}-\d$/
@@ -196,8 +212,9 @@ onload = function (){
     };
 
 
-/*  
+  
     exo1();
+/*
     exo2();
     exo3();
 */

@@ -1,5 +1,4 @@
 onload = function () {
-
     
     Object.prototype.log = function (){
         console.log(this);
@@ -20,32 +19,12 @@ onload = function () {
         affiche_carte (){
             let img = $('.img_carte');
             let nom = "cartes1/" + this.numero + this.couleur + '.gif';
-            nom.log();
             img.attr('src',nom);
         }
 
-    
-    }
-
-    function Cartes (){
-        this.constuctor(num, couleur);    
     }
     
-    Cartes.prototype.extends({
-        constructor : function(){
-            this.numero = numero;
-            this.couleur = couleur;
-            this.image = null;
-        },
-        affiche_carte : function(){
-            let img = $('.img_carte');
-            let nom = "cartes1/" + this.numero + this.couleur + '.gif';
-            nom.log();
-            img.attr('src',nom);
-        }
-    })
-    
-    let tab_personne = ['valet','dame','roi']
+    let tab_personne = ['valet','dame','roi'];
 
     let num_carte = $('.select_num_carte');
     let i=1;
