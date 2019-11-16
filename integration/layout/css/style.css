@@ -1,4 +1,4 @@
-/* Reset CSS */
+ /* Reset CSS */
 
 * {
     margin: 0;
@@ -30,7 +30,7 @@
   }
 }
 
-.fi:before{
+.social_networks a:before , .nav_search_temp a:before{
     display: inline-block;
     font-family: "Flaticon";
     font-style: normal;
@@ -45,56 +45,23 @@
     font-smoothing: antialiased;
 }
 
-.flaticon-facebook:before { 
-    content: "\f100"; 
-}
+.flaticon-facebook:before { content: "\f100"; }
+.flaticon-twitter:before { content: "\f101";}
+.flaticon-instagram:before { content: "\f102";}
+.flaticon-pinterest:before { content: "\f103";}
+.flaticon-video:before { content: "\f108";}
+.flaticon-linkedin:before { content: "\f104"; }
+.flaticon-search:before { content: "\f105";}
+.flaticon-weather:before {content: "\f106";}
 
-.flaticon-twitter:before { 
-    content: "\f101";
-}
-
-.flaticon-instagram:before { 
-    content: "\f102";
-}
-
-.flaticon-pinterest:before {
-    content: "\f103";
-}
-
-.flaticon-video:before { 
-    content: "\f108";
-}
-
-.flaticon-linkedin:before { 
-    content: "\f104"; 
-}
-
-.flaticon-search:before { 
-    content: "\f105";
-}
-
-.flaticon-weather:before { 
-    content: "\f106";
-}
-
-.flaticon-open-menu:before {
-    content: "\f107"; 
-}
+.flaticon-open-menu:before {content: "\f107"; }
 
 /*
-Classes génériques
+    Classes génériques
 */
 
 .txt_center {
     text-align: center;
-}
-
-.link_without_decoration {
-    text-decoration:none;
-}
-
-.white {
-    color: white;
 }
 
 .margin_auto {
@@ -104,10 +71,16 @@ Classes génériques
 /* BODY */
 
 body {
-    color: white;
+    color: white;  
 }
 
-/* CSS version mobile */
+a {
+    text-decoration:none;
+}
+
+/* 
+    CSS version mobile 
+*/
 
 /* Header */
 
@@ -116,15 +89,20 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 5% 1%;
+    padding: 10px 1%;
+}
+
+header a:hover, h1:hover {
+    color:#2D7DBF;
+}
+
+h1 {
+    font-size: 28px;
+    color: white;
 }
 
 .logo_lauzanne {
     height: 32px;
-}
-
-.link_lauzanne_tourism {
-    width: 25%;
 }
 
 .flaticon-weather {
@@ -136,11 +114,15 @@ header {
     flex-direction: row;
 }
 
+.nav_search_temp a {
+    color: white;
+}
+
 .flaticon-search {
     padding-right: 20px;
 }
 
-.fi {
+.nav_search_temp a, .social_networks a {
     font-size: 30px;
 }
 
@@ -149,9 +131,9 @@ header {
 .font_acceuil {
     position: relative;
     background-image: url("../img/lauzanne_img.jpg");
-    background-position: top 0 right 50%;
+    background-position: top 50% right 50%;
     background-size: cover;
-    height: 600px;
+    height: 450px;
 }
 
 .social_networks {
@@ -160,7 +142,7 @@ header {
 
 .navigation_page {
     position: absolute;
-    bottom: -100px;
+    bottom: -114px;
     width: 100%;
     margin: auto;
     display: flex;
@@ -168,16 +150,146 @@ header {
     font-size: 30px;
 }
 
-.link_nav_page {
+.navigation_page a {
     color: white;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.9);
     margin: 1px 10%;
-    padding: 5% 0;
+    padding: 10px 0;
+}
+
+.navigation_page a:first-child {
+    background-color: rgba(0,0,0,0.5);
 }
 
 .copyright {
     position: absolute;
-    bottom: 1%;
-    right: 1%;
+    bottom: 2%;
+    right: 2%;
+    font-size: 10px;
+    opacity: 0.8;
 }
 
+.navigation_page a:hover {
+    color:#2D7DBF;
+    text-decoration: underline;
+}
+
+.flaticon-weather:hover span {
+    border-color: white;
+}
+/* 
+    Version tablette 
+*/
+
+@media screen and (min-width: 768px) {
+    
+    /* header */
+    
+    header{
+        padding: 15px 1%;
+    }
+    
+    h1 {
+        font-size: 38px;
+    }
+
+    .logo_lauzanne {
+        height: 42px;
+    }
+
+    .flaticon-weather {
+        display: block;
+    }
+    
+    .separation_weather_temp {
+        border-right: 3px solid grey;
+        border-radius: 20%;
+        margin: 0 10px;
+    }
+    
+    /* image de fond */
+    
+    .font_acceuil {
+        height: 550px;
+    }
+    
+    /* liens résaux sociaux*/
+    
+    .social_networks {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top : 10%;
+    }
+    
+    .social_networks a{
+        color: white;
+        background-color: #2C81C6;
+        padding: 12px;
+    }
+    
+    .social_networks div{
+        padding: 11.3px 0;
+    }
+
+    .social_networks a:hover{
+        background-color: #0C4561;
+    }
+    
+    .flaticon-facebook:hover:after{content: " Facebook";}
+    .flaticon-twitter:hover:after{content: "  Twitter";}
+    .flaticon-instagram:hover:after{content: "  Instagram";}
+    .flaticon-pinterest:hover:after{content: " Pinterest";}
+    .flaticon-video:hover:after{content: " Youtube";}
+    .flaticon-linkedin:hover:after{content: " Linkedin";}
+    
+    .social_networks div:hover{
+        display: block;
+    }
+   
+    .navigation_page {
+        bottom: -58px;
+    }
+    
+    .navigation_page a:nth-child(2) {
+        background-color: rgba(0,0,0,0.5);
+    }
+}
+
+/* 
+    Version desktop 
+*/
+
+@media screen and (min-width: 1280px) {
+
+    /* header */
+    
+    .flaticon-search, .flaticon-weather {
+        padding-right: 50px;
+    }
+    
+    /* image de fond */
+    
+    .font_acceuil {
+        height: 580px;
+    }
+    
+    .navigation_page {
+        flex-direction: row;
+        justify-content: space-around;
+        bottom: 0;
+        width: 70%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    
+    .navigation_page div{
+        margin: 0;
+        padding: 25px 0;
+        background-color: rgba(0,0,0,0.7);
+    }
+    
+    .navigation_page a:nth-child(1), .navigation_page a:nth-child(2), .navigation_page a:nth-child(3){
+        background-color: transparent;
+    }
+}
