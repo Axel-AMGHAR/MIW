@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    		<style type="text/css" media="screen">
+			[v-cloak] {
+				color: white;
+				border: 1px solid red;
+			}
+		</style>
+
+</head>
+<body>
+    <div id="app">
+       
+        <h1>Bases de vue JS</h1>
+        
+        <h2>use {{}} (Texte)</h2>
+        <div>permet d'afficher une variable</div>
+        <div>{{test}}</div>
+        
+        <h2>use v-text</h2>
+        <div>Permet d'afficher le contenu d'une variable (pas html)</div>
+        <div v-text='div'>Contenu écrasé</div>
+        
+        <h2>use v-html</h2>
+        <div>Interpréte du code HTML passé en paramétre</div>
+        <div v-html="html">Contenu écrasé</div>
+        
+        <h2>use v-pre</h2>
+        <div>Permet de ne pas afficher la variable</div>
+        <div v-pre>{{var}}</div>
+        
+        <h2>use v-cloak</h2>
+        <div>Permet de mettre du style en attendant le charchement de vue.js (partique pour les barres de chargements</div>
+        <div v-cloak>{{variable}}</div>
+        
+        <h2>use v-once</h2>
+        <div></div>
+        <div v-once></div>
+        
+        <h2>:class</h2>
+        <div>:class= pour utiliser une variable</div>
+        <div class="test" :class="test">div.test.my_test</div>
+        
+        <h2>v-once</h2>
+        <div></div>
+        <div></div>
+        
+        <h2>v-</h2>
+        <div></div>
+        <div></div>
+        
+        <h2>v-</h2>
+        <div></div>
+        <div></div>
+        
+        <h2>v-</h2>
+        <div></div>
+        <div></div>
+        
+    </div>
+    
+    <script>
+        
+    var app = new Vue({
+        el: '#app',
+        data: {
+            
+            test: 'my_test',
+            div: 'use v-text',
+            html: '<input type="submit" class="button" value="push">',
+            variable: 'my_var'
+            
+        } 
+    })
+
+    </script>
+</body>
+</html>
