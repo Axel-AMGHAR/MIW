@@ -24,7 +24,7 @@ try {
 
     //Recipients
     $mail->setFrom('miw@websenso.net', 'MIW Party');
-    $mail->addAddress('james+miw@websenso.com', 'James');     // Add a recipient
+    $mail->addAddress('axel.amghar@gmail.com', 'Axel');     // Add a recipient
     $mail->addCC('miw@websenso.net');
 
     // Attachments

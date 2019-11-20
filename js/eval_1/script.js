@@ -19,13 +19,10 @@ onload = function (){
                     this.count=ISBN.count;
                 }
                 this.display(x, y);
-                document.getElementById('ok'+this.count).onclick = (e)=> {
-                      e.preventDefault;
-                      log(this.count);
-                      log(document.getElementById('isbn'+this.count));
-                      this.test(document.getElementById('isbn'+this.count).value);
-                    };
+                log(this.count);
+/*
                 this.clicks();
+*/
             };
 
             conformeISBN(ISBN){
@@ -45,8 +42,8 @@ onload = function (){
                 return somme % 10 == 0;
             }
             
-            test(isbn, i){
-                let resultIsbn = document.getElementById("resultat"+i);
+            test(isbn){
+                let resultIsbn = document.getElementById("resultat"+this.count);
 
                 if(isbn == '')
                     resultIsbn.value = 'Saisir un numéro ISBN'
@@ -72,12 +69,16 @@ onload = function (){
                 
                 document.getElementsByTagName("body")[0].innerHTML += formIsbn;
                 log(document.getElementById('ok'+this.count));     
-
+                
+                    document.getElementById('ok'+this.count).onclick = () => {
+                      log(document.getElementById('isbn'+this.count));
+                      this.test(document.getElementById('isbn'+this.count).value,this.count);
+                    };
 		          
                   
             };
 
-            clicks (){
+/*            clicks (){
                 for (let i =1; i<=ISBN.count; ++i){
 		          document.getElementById('ok'+i).onclick = () => {
                       log(document.getElementById('isbn'+i));
@@ -85,7 +86,7 @@ onload = function (){
                     };
                 }
                 
-            } 
+            } */
         
         
         }
