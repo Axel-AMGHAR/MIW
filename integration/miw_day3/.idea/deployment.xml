@@ -5,7 +5,7 @@
       <paths name="ft">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/miw_day3" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
