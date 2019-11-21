@@ -1,0 +1,8 @@
+Don'T DO
+
+- pas de marges
+- pas display
+
+DO
+
+- style in head
