@@ -18,7 +18,7 @@
        
         <h1>Bases de vue JS</h1>
         
-        <h2>use {{}} (Texte)</h2>
+       <h2>use {{}} (Texte)</h2>
         <div>permet d'afficher une variable</div>
         <div>{{test}}</div>
         
@@ -38,29 +38,33 @@
         <div>Permet de mettre du style en attendant le charchement de vue.js (partique pour les barres de chargements</div>
         <div v-cloak>{{variable}}</div>
         
-        <h2>use v-once</h2>
-        <div></div>
-        <div v-once></div>
-        
         <h2>:class</h2>
         <div>:class= pour utiliser une variable</div>
         <div class="test" :class="test">div.test.my_test</div>
         
-        <h2>v-once</h2>
-        <div></div>
-        <div></div>
+        <h2>calcul</h2>
+        <div>{{number + 1}}</div>
+    <!-- 
+        <h2>relation ternaire</h2>
+        <div>on peut utiliser des functions js ...</div>
+        <div>{{ ok ? 'OUI' : 'NON' }}</div>
+        <div>{{ message.split('').reverse().join('') }}</div>
+        <div>déclration de variables :</div>
+        <div>{{ var a = 1 }}</div>
+        <p v-if="seen">Maintenant vous me voyez</p>
+         
+        <h2>id</h2>
+        <div>Mettre du text html avec une var</div>
+        <div v-bind:id="'my_'+id">text</div>
+
+        
+        <h2>v-on</h2>
+        <div>exemple: onclick applique la function</div>
+        <div><a v-on:click="doSomething"> ... </a></div>
         
         <h2>v-</h2>
         <div></div>
-        <div></div>
-        
-        <h2>v-</h2>
-        <div></div>
-        <div></div>
-        
-        <h2>v-</h2>
-        <div></div>
-        <div></div>
+        <div></div>-->
         
     </div>
     
@@ -70,13 +74,17 @@
         el: '#app',
         data: {
             
+            seen: true,
+            id: 'id',
+            number : 6,
             test: 'my_test',
             div: 'use v-text',
             html: '<input type="submit" class="button" value="push">',
             variable: 'my_var'
+            /*doSomething: function(){console.log('t')}*/
             
         } 
-    })
+    });
 
     </script>
 </body>

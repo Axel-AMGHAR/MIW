@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html class="accueil" lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>stock</title>
+		<style>
+            #app {
+                text-align: center;
+            }
+            
+            .max {
+                padding: 15px;
+                color: white;
+                border: black 1px solid;
+                background-color: red;
+
+            }
+            
+            button {
+                padding: 15px;
+                border: black 1px solid;
+                background-color: skyblue;
+                color: white;
+                margin-bottom: 10px;
+            }
+        </style>
+	</head>
+	<body>
+        <div id="app">
+            <label>Saisir un nombre max : </label>
+            <input @:change="function(){maximum=false;}" type="number" v-model="max">
+            <h1>Cela va faire boom</h1>
+            <button @click="verif_max()">Appuyez ici</button>
+            <div>On va compter : {{max}} </div>
+            <div class="max" v-if="maximum">Boom vous avez atteint le maximum !</div>
+            <div class="max" v-if="input">Saisisez une valeur dans l'input</div>
+            <button @click="reset">Reset</button>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				data: {
+                    max: '',
+                    maximum: false,
+                    input: false
+				},
+                methods: {
+                verif_max (){
+                    
+                    if ( this.max !== ''){
+                        this.input = false;
+                        if(this.max > 1)
+                           this.max--;
+                        else if(this.max == 1)
+                        {
+                            this.max--;
+                            this.maximum = true; 
+                        }
+                    } else 
+                        this.input = true;
+                    
+                },
+                reset (){
+                    location.reload();
+                }    
+                    
+            }
+			});
+		</script>
+	</body>
+</html>
