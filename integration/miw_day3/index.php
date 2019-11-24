@@ -98,8 +98,8 @@ if (!empty($_GET['delivery']) and $_GET['delivery'] === "sent") {
 </head>
     <body>
 
-    <form action="#"   style="<?php  echo isset($_REQUEST['delivery'])? 'display:none;': ''?>" method="post">
-        <span><input id="input_mail" type="email" name="email" value="axel.amghar@gmail.com" placeholder="Ton email de star..." required/></span>
+    <form action="send_email.php"   style="<?php  echo isset($_REQUEST['delivery'])? 'display:none;': ''?>" method="post">
+        <span><input id="input_mail" type="email" name="email" placeholder="Ton email de star..." required/></span>
         <span><button id="submit" type="submit"> Inscris-toi ! <img  width="20%" src="img/vip.svg" alt="ticket_vip"></button></span>
     </form>
 

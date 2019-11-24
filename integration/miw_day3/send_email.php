@@ -27,7 +27,7 @@ try {
     //Recipients
 
     $mail->setFrom('test@asheart.fr', 'MIW Party');/*axel.amghar@gmail.com*/
-    $mail->addAddress('axel.amghar@gmail.com', 'Axel');     // Add a recipient
+    $mail->addAddress($_POST['email'], '');     // Add a recipient
 
 
     // Content
