@@ -104,6 +104,6 @@ if (!empty($_GET['delivery']) and $_GET['delivery'] === "sent") {
     </form>
 
     <div class="none <?= $body_class ?>"><img src="img/mail.svg"   alt="message envoyé"></div>
-
+<div>lorem45 </div>
     </body>
 </html>
