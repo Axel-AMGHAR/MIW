@@ -1,0 +1,40 @@
+@import 'reset';
+@import 'menu';
+@import 'layout';
+
+.a_cacher {
+	display: none;
+}
+
+.Icon {
+  /* Permet de redimensionner en changeant la font-size de l’icône */
+  width: 1em; height: 1em;
+  /* Bel alignement visuel des icônes avec le texte */
+  vertical-align: -0.15em;
+  /* fill par défaut = valeur de la propriété couleur de son élément parent */
+  fill: currentColor;
+  /* Les paths et les strokes qui dépassent de la viewBox peuvent apparaître dans IE.
+	 Si vous utilisez normalize.css, inutile de l’ajouter. */
+  overflow: hidden;
+}
+
+.textcenter {
+	text-align: center;
+}
+.mbm {
+	margin-bottom: 1rem;
+}
+
+.photo img{
+	width: 300px;
+}
+
+header {
+	background-image: url('');
+    height: 300px;
+}
+@media screen and (min-width: $bp1){
+	 header {
+		 height: 400px;
+	 }
+}

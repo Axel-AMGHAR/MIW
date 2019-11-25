@@ -20,6 +20,9 @@ class LivreController extends Controller{
     }
 
     public function new_or_update(){
+        $id = isset($_GET['id']) && !empty($_GET['id'])?$_GET['id']:null;
+        $livre = new Livre($id);
+        //A MODIFIER + mettre le meme nom pour la methode et pour la vue
         if (isset($_GET['action']) && $_GET['action']=='new')
             $this->render('new_livre');
         else {
