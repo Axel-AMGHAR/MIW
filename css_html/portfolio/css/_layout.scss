@@ -1,35 +1,8 @@
 $bp1: 768px;
 $bp2: 1170px;
 
-
 .inner {
 	width: 100%
-}
-
-.logo_site {
-	width: 100px;
-}
-
-.bg_dotted {
-	background-image: url('../img/points.svg');
-}
-
-.bg_orange {
-	background-color: orange;
-}
-
-.bg_vert {
-	background-color: green;
-}
-
-.lesLogos {
-	display: flex;
-	flex-wrap: wrap;
-
-	> div {
-		width: 50%;
-	}
-
 }
 
 @media screen and (min-width: $bp1){
@@ -42,25 +15,5 @@ $bp2: 1170px;
 @media screen and (min-width: $bp2){
 	.inner {
 		width: $bp2;
-	}
-}
-
-.texte_principal {
-	text-align: center;
-	font-weight: bold;
-}
-
-.photo_texte {
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 1rem;
-}
-
-@media screen and (min-width: $bp1){
-	.photo_texte {
-		flex-direction: row;
-	}
-	.texte {
-		padding-left: 1rem;
 	}
 }
