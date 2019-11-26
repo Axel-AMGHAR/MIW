@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div>{{ text | first_maj }}</div>
+        </div>
+
+        <script>
+
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    text: 'mon texte'
+                },
+
+                filters: {
+                    first_maj: function (value){
+                        return value.charAt(0).toUpperCase() + value.substring(1);
+                    }
+                }
+            });
+
+        </script>
+    </body>
+</html>

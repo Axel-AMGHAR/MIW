@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+       <h1>Todo</h1>
+        <div id="app">
+            <ul v-for='i in li.length' :key="i">
+                <li><input @focus="li_change" v-model="li[i-1]" type="text">{{i}}<button @click="_delete(i-1)"><img src="../img/error.png" alt="delete"></button></li>
+            </ul>
+            <h2>Le nombre d'items non vide</h2>
+            <div>MaxA:{{ MaxA }}</div>
+            <div>MaxB:{{ MaxB }}</div>
+            <div>MaxC:{{ MaxC }}</div>
+            <button @click.prevent="ajout_li" type="text">add</button>
+            <div>Debug {{ li }}</div>
+        </div>
+
+        <script>
+
+            var app = new Vue({
+                el: '#app',
+                data: function (){
+                    return {
+                        li: [],
+                        MaxA: 0,
+                        MaxB: 0,
+                        MaxC: 0
+                    };
+                },
+                
+                methods : {
+                    ajout_li: function (){
+                        this.li.push('');
+                    },
+                    
+                    _delete: function(i){
+                        this.li.splice(i,1);
+                        this.MaxA = this.li.length;
+                        this.MaxB--;
+                    },
+                    
+                    li_change: function() {
+                        console.log('t')
+                        this.MaxA = this.li.flat.length;
+                    }
+                },
+                
+                filters: {
+
+                }
+            });
+
+        </script>
+    </body>
+</html>
