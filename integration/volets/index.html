@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Gérer ses volets</title>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body>
+        <div class="fenetre">
+            <div class="volet"><img class="pointeur" src="img/Ellipse%206.png" alt=""></div>
+            <input id="range" type="range" min="0" max="95" orient="vertical"/>
+        </div>
+
+        <script>
+            let range = document.getElementById('range');
+            range.value = 95;
+            document.getElementsByClassName('fenetre')[0];
+            range.addEventListener('input', function (){
+                let volet = document.getElementsByClassName('volet')[0];
+                volet.setAttribute('style','bottom:'+this.value+'%');
+                if(this.value >= 95 || this.value == 0)
+                    volet.style.backgroundImage = 'url("./img/volet_ferme.png")';
+                else {
+                    volet.style.backgroundImage = 'url("./img/volet_ouvert.png")';
+                }
+            });
+
+
+        </script>
+    </body>
+</html>
