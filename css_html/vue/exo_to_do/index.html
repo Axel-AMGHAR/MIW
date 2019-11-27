@@ -6,14 +6,14 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
-       <h1>Todo</h1>
+        <h1>Todo</h1>
         <div id="app">
             <ul v-for='i in li.length' :key="i">
-                <li><input @focus="li_change" v-model="li[i-1]" type="text">{{i}}<button @click="_delete(i-1)"><img src="../img/error.png" alt="delete"></button></li>
+                <li><input @keyup.enter="ajout_li" @input="li_input" v-model="li[i-1]" type="text">{{i}}<button @click="_delete(i-1)"><img src="../img/error.png" alt="delete"></button></li>
             </ul>
             <h2>Le nombre d'items non vide</h2>
             <div>MaxA:{{ MaxA }}</div>
-            <div>MaxB:{{ MaxB }}</div>
+            <div>MaxB:{{ get_maxB }}</div>
             <div>MaxC:{{ MaxC }}</div>
             <button @click.prevent="ajout_li" type="text">add</button>
             <div>Debug {{ li }}</div>
@@ -28,30 +28,41 @@
                         li: [],
                         MaxA: 0,
                         MaxB: 0,
-                        MaxC: 0
+                        MaxC: 0,
+                        val: ''
                     };
                 },
-                
+
                 methods : {
                     ajout_li: function (){
                         this.li.push('');
                     },
-                    
+
                     _delete: function(i){
                         this.li.splice(i,1);
-                        this.MaxA = this.li.length;
-                        this.MaxB--;
                     },
-                    
-                    li_change: function() {
-                        console.log('t')
-                        this.MaxA = this.li.flat.length;
-                    }
-                },
-                
-                filters: {
 
+                    li_input: function() {
+                        this.MaxA = 0;
+                        this.li.forEach( (element) =>{
+                            if( element != "")
+                                this.MaxA++; 
+                        })
+                    }
+
+                },
+
+                computed: {
+                    get_maxB() {
+                        this.MaxB = 0;
+                        this.li.forEach((element) =>{
+                            if( element != "")
+                                this.MaxB++;   
+                        })
+                        return this.MaxB;
+                    }
                 }
+
             });
 
         </script>

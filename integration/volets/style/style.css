@@ -28,6 +28,8 @@ input[type=range][orient=vertical]
 
 .pointeur{
     position: absolute;
-    bottom: -20px;
+    bottom: -40px;
+    right: 10px;
+        z-index: 0;
 }
   
