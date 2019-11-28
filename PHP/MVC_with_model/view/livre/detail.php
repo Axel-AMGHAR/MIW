@@ -1,3 +1,9 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <!-- charset pour le signe € -->
+</head>
+
 <?php
 /** @var Livre $livre */
 ?>

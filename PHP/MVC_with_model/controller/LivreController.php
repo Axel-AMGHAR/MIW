@@ -3,7 +3,6 @@
 class LivreController extends Controller{
 
     public function liste(){
-
         $livre = new Livre();
         $livres = $livre->get_all();
         $this->set(['livres'=>$livres]);
@@ -24,11 +23,11 @@ class LivreController extends Controller{
         $livre = new Livre($id);
         //A MODIFIER + mettre le meme nom pour la methode et pour la vue
         if (isset($_GET['action']) && $_GET['action']=='new')
-            $this->render('new_livre');
+            $this->render('new');
         else {
             $livre = new Livre($_GET['id']);
             $this->set(['livre'=>$livre]);
-            $this->render('modifier',$livre);
+            $this->render('modifier');
         }
     }
 

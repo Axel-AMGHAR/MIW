@@ -19,7 +19,7 @@ class Livre extends Model {
             $this->nom = $data['nom'];
             $this->isbn = $data['isbn'];
             $this->resume = $data['resume'];
-            $this->auteur = $data['auteur'];
+            $this->auteur = $data['id_auteur'];
             $this->prix = $data['prix'];
         }
     }
@@ -34,14 +34,15 @@ class Livre extends Model {
             $livre->nom = $row['nom'];
             $livre->isbn = $row['isbn'];
             $livre->resume = $row['resume'];
-            $livre->auteur = $row['auteur'];
+            $livre->id_auteur = $row['id_auteur'];
             $livre->prix = $row['prix'];
             $livres[] = $livre;
         }
         return $livres;
     }
+
     public function create(){
-        $req = $this->bdd->prepare('INSERT INTO livre (nom, isbn, resume, auteur, prix) VALUE (:nom, :isbn, :resume, :auteur, :prix)');
+        $req = $this->bdd->prepare('INSERT INTO livre (nom, isbn, resume, id_auteur, prix) VALUE (:nom, :isbn, :resume, :auteur, :prix)');
         $req->bindValue(':nom', $this->nom);
         $req->bindValue(':isbn', $this->isbn);
         $req->bindValue(':resume', $this->resume);
@@ -52,7 +53,7 @@ class Livre extends Model {
     }
 
     public function update(){
-        $req = $this->bdd->prepare("UPDATE livre SET nom=:nom, isbn=:isbn, resume=:resume, auteur=:auteur, prix=:prix WHERE id=:id");
+        $req = $this->bdd->prepare("UPDATE livre SET nom=:nom, isbn=:isbn, resume=:resume, id_auteur=:auteur, prix=:prix WHERE id=:id");
         $req->bindValue(':id', $this->id);
         $req->bindValue(':nom', $this->nom);
         $req->bindValue(':isbn', $this->isbn);
@@ -61,6 +62,7 @@ class Livre extends Model {
         $req->bindValue(':prix', $this->prix);
         $req->execute();
     }
+
     public function delete(){
         $req = $this->bdd->prepare("DELETE FROM livre WHERE id=:id");
         $req->bindValue(':id', $this->id);
