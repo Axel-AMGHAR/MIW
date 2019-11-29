@@ -8,8 +8,8 @@
     <body>
         <h1>Todo</h1>
         <div id="app">
-            <ul v-for='i in li.length' :key="i">
-                <li><input @keyup.enter="ajout_li" @input="li_input" v-model="li[i-1]" type="text">{{i}}<button @click="_delete(i-1)"><img src="../img/error.png" alt="delete"></button></li>
+            <ul v-for='(value,i) in li' :key="i">
+                <li><input @keyup.enter="ajout_li" @input="li_input" v-model="li[i].titre" type="text">{{i}}<button @click="_delete(i)"><img src="../img/error.png" alt="delete"></button></li>
             </ul>
             <h2>Le nombre d'items non vide</h2>
             <div>MaxA:{{ MaxA }}</div>
@@ -26,6 +26,7 @@
                 data: function (){
                     return {
                         li: [],
+                        id : 0,
                         MaxA: 0,
                         MaxB: 0,
                         MaxC: 0,
@@ -35,7 +36,12 @@
 
                 methods : {
                     ajout_li: function (){
-                        this.li.push('');
+                        this.li.push({'id': this.id++, 'titre': ''});
+                        this.$nextTick(() => {
+                            if (this.li.length != 0)
+                                document.getElementsByTagName('input')[this.li.length-1].focus();
+                        });
+                        
                     },
 
                     _delete: function(i){
@@ -45,7 +51,7 @@
                     li_input: function() {
                         this.MaxA = 0;
                         this.li.forEach( (element) =>{
-                            if( element != "")
+                            if( element.titre != "")
                                 this.MaxA++; 
                         })
                     }
@@ -55,7 +61,7 @@
                     get_maxB() {
                         this.MaxB = 0;
                         this.li.forEach((element) =>{
-                            if( element != "")
+                            if( element.titre != "")
                                 this.MaxB++;   
                         })
                         return this.MaxB;
@@ -63,17 +69,20 @@
                 },
                 
                 watch : {
-                    li (){
-                        this.MaxC = this.li.filter( element => element != '').length;
-                        
+                    deep: true,
+                    li : {
+                        handler : function(){
+                            localStorage.setItem('monLocal',JSON.stringify(this.li));
+                        },
+                        deep: true,
                     }
                 },
-
-                updated() {
-                    let input = document.getElementsByTagName('input');
-                    if (input.length != 0)
-                        input[input.length-1].focus();
-                  }
+                
+                mounted(){
+                    let json = JSON.parse(localStorage.getItem('monLocal'))
+                       if ( json != null)
+                            this.li = json;
+                    }               
             });
 
         </script>

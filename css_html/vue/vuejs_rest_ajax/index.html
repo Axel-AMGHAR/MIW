@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <h1>Todo</h1>
+        <div id="app">
+            <ul v-for='(value,i) in li' :key="i">
+                <li><input @keyup.enter="ajout_li" @input="li_input" v-model="li[i].titre" type="text">{{i}}<button @click="_delete(i)"><img src="../img/error.png" alt="delete"></button></li>
+            </ul>
+            <h2>Le nombre d'items non vide</h2>
+            <div>MaxA:{{ MaxA }}</div>
+            <div>MaxB:{{ get_maxB }}</div>
+            <div>MaxC:{{ MaxC }}</div>
+            <button @click.prevent="ajout_li" type="text">add</button>
+            <div>Debug {{ li }}</div>
+        </div>
+
+        <script>
+            const apiUri = "http://localhost:3000/";
+
+            var app = new Vue({
+                el: '#app',
+                data: function (){
+                    return {
+                        li: [],
+                        MaxA: 0,
+                        MaxB: 0,
+                        MaxC: 0,
+                        val: ''
+                    };
+                },
+
+                methods : {
+                    ajout_li: function (){
+                        let new_line = {
+                                    'titre': ''
+                                  };
+                        this.li.push(new_line);
+                        this.$nextTick(() => {
+                            if (this.li.length != 0)
+                                document.getElementsByTagName('input')[this.li.length-1].focus();
+                        });
+                        
+                        fetch(apiUri + 'todo/', {
+                            method: 'POST',
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(new_line)
+                        });
+
+                    },
+
+                    _delete: function(i){
+
+                        this.li.splice(i,1);
+                    },
+
+                    li_input: function() {
+                        this.MaxA = 0;
+                        this.li.forEach( (element) =>{
+                            if( element.titre != "")
+                                this.MaxA++; 
+                        })
+                    }
+                },
+
+                computed: {
+                    get_maxB() {
+                        this.MaxB = 0;
+                        this.li.forEach((element) =>{
+                            if( element.titre != "")
+                                this.MaxB++;   
+                        })
+                        return this.MaxB;
+                    }
+                },
+
+                watch : {
+                    li(){
+                    fetch(apiUri + 'todo/' + id, {
+                        method: 'PATCH',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(this.li)
+                    });
+                    }
+
+                },
+
+                mounted(){
+                        fetch(apiUri + 'todo/', {
+                            method: 'GET',
+                        }).then((response) =>{
+                                return response.json();
+                            })
+                            .then( (data) => {
+                            this.$nextTick(() => {
+                                this.li = data;
+                            console.log(this.li)
+                            });
+                            })
+                            
+                        }
+/*                    let json = JSON.parse(localStorage.getItem('monLocal'))
+                    if ( json != null)
+                        this.li = json;*/
+                
+                
+            });
+
+        </script>
+    </body>
+</html>
