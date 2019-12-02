@@ -13,20 +13,23 @@ class LivreController extends Controller{
         $id = (int)$_GET['id'];
 
         $livre = new Livre($id);
-
-        $this->set(['livre'=>$livre]);
+        $auteur = new Auteur($livre->id_auteur);
+        $this->set(['livre'=>$livre, 'auteur'=>$auteur]);
         $this->render('detail');
     }
 
     public function new_or_update(){
         $id = isset($_GET['id']) && !empty($_GET['id'])?$_GET['id']:null;
-        $livre = new Livre($id);
-        //A MODIFIER + mettre le meme nom pour la methode et pour la vue
-        if (isset($_GET['action']) && $_GET['action']=='new')
+        if (isset($_GET['action']) && $_GET['action']=='new'){
+            $auteur = new Auteur();
+            $auteurs = $auteur->get_all();
+            $this->set(['auteurs'=>$auteurs]);
             $this->render('new');
-        else {
+        } else {
             $livre = new Livre($_GET['id']);
-            $this->set(['livre'=>$livre]);
+            $auteur = new Auteur();
+            $auteurs = $auteur->get_all();
+            $this->set(['livre'=>$livre, 'auteurs'=>$auteurs]);
             $this->render('modifier');
         }
     }
@@ -34,7 +37,7 @@ class LivreController extends Controller{
     public function ajouter_ou_modifier(){
         $livre = new Livre();
         $livre->nom = $_POST['nom'];
-        $livre->auteur = $_POST['auteur'];
+        $livre->id_auteur = $_POST['id_auteur'];
         $livre->resume = $_POST['resume'];
         $livre->isbn = $_POST['isbn'];
         $livre->prix = $_POST['prix'];

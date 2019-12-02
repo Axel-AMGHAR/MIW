@@ -1,6 +1,5 @@
 <?php
 
-
 class Auteur extends Model {
     public $id;
     public $nom;
@@ -37,18 +36,17 @@ class Auteur extends Model {
     }
 
     public function get_livres (){
-        $req = $this->bdd->prepare('SELECT * FROM livre where id_auteur=$id');
+        $req = $this->bdd->prepare('SELECT * FROM livre where id_auteur=:id');
+        $req->bindValue(':id', $this->id);
         $req->execute();
-        $auteurs = [];
+        $livres = [];
         while ($row = $req->fetch()){
-            $auteur = new Livre();
-            $auteur->id = $row['id'];
-            $auteur->nom = $row['nom'];
-            $auteur->prenom = $row['prenom'];
-            $auteur->date_naissance = $row['date_naissance'];
-            $auteurs[] = $auteur;
+            $livre = new Livre();
+            $livre->id = $row['id'];
+            $livre->nom = $row['nom'];
+            $livres[] = $livre;
         }
-        return $auteurs;
+        return $livres;
     }
 
     public function create(){
@@ -73,5 +71,10 @@ class Auteur extends Model {
         $req = $this->bdd->prepare("DELETE FROM auteur WHERE id=:id");
         $req->bindValue(':id', $this->id);
         $req->execute();
+
+        //supprime les livres de l'auteur dès que l'on supprime celui-ci
+        $del_livres = $this->bdd->prepare("DELETE FROM livre WHERE id_auteur=:id");
+        $del_livres->bindValue(':id', $this->id);
+        $del_livres->execute();
     }
 }

@@ -1,1 +1,1 @@
-mettre la vue create and update sur le même fichier
+mettre sur ftp avec base de données

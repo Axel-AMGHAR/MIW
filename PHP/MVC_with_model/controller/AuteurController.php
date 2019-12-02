@@ -13,13 +13,12 @@ class AuteurController extends Controller {
         $id = (int)$_GET['id'];
 
         $auteur = new Auteur($id);
-
-        $this->set(['auteur'=>$auteur]);
+        $livres = $auteur->get_livres();
+        $this->set(['auteur'=>$auteur,'livres'=>$livres]);
         $this->render('detail');
     }
 
     public function new_or_update(){
-        //A MODIFIER + mettre le meme nom pour la methode et pour la vue
         if (isset($_GET['action']) && $_GET['action']=='new')
             $this->render('new');
         else {

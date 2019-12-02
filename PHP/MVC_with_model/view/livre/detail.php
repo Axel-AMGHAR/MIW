@@ -1,11 +1,12 @@
 <!doctype html>
 <head>
-    <meta charset="UTF-8">
+
     <!-- charset pour le signe € -->
 </head>
 
 <?php
 /** @var Livre $livre */
+/** @var Auteur $auteur */
 ?>
 
 <a href="<?php echo ROOT ?>livre/liste">< Retour</a>
@@ -16,7 +17,7 @@
 <div><?php echo $livre->resume ?></div>
 
 <h3>Auteur :</h3>
-<div><?php echo $livre->auteur ?></div>
+<div><a href="<?php echo ROOT ?>auteur/detail?id=<?php echo $auteur->id ?>"><?php echo $auteur->nom . ' ' . $auteur->prenom ?></a></div>
 
 <h3>ISBN :</h3>
 <div><?php echo $livre->isbn ?></div>
