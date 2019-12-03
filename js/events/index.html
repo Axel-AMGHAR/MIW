@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>events</title>
+        <style>
+            
+            .dis{
+                display: flex;
+                flex-direction: row;
+                position: relative;
+
+            }
+            
+            .bloc_grey{
+                width: 300px;
+                height: 300px;
+                background-color: darkgrey;
+                border: 1px solid black;
+                margin: 0 20px;
+                position: relative;
+            }
+
+            .bloc_green{
+                top: 0px;
+                left: 0px;
+                width: 33%;
+                height: 33%;
+                background-color: green;
+                position: absolute;
+            }
+
+            .bloc_green_abs{
+                top: 0px;
+                left: 0px;
+                width: 100px;
+                height: 100px;
+                background-color: green;
+                position: absolute;
+            }
+            
+            .bloc_grey_abs{
+                top: 0px;
+                right: 20px;
+                width: 300px;
+                height: 300px;
+                background-color: darkgrey;
+                border: 1px solid black;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="dis">
+            <div class="bloc_grey">
+                <div class="bloc_green">
+                    <div>1er Cas</div>
+                </div>
+            </div>
+            <div class="bloc_grey">
+                <div class="bloc_green">
+                    <div>2ème Cas</div>
+                </div>
+            </div>
+            <div class="bloc_grey">
+                <div class="bloc_green">
+                    <div>3ème Cas</div>
+                </div>
+            </div>
+            <div class="bloc_grey_abs" style="left:400px; top:0px">
+                <div class="bloc_green_abs" style="top: 0; left: 0">
+                    <div>4ème Cas</div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            
+            function dis_grey(){
+                console.log('grey');
+            }
+            
+            function dis_green(){
+                console.log('green');
+            }
+            
+            function dis_green_stop(e){
+                e.stopPropagation();
+                console.log('green');
+            }
+
+            function deplace_grey(e){
+                let dx = e.clientX-parseInt(this.style.left);
+                let dy = e.clientY-parseInt(this.style.top); 
+                
+                function move(e){
+                    this.style.top = eval(e.clientY-dy)+'px';
+                    this.style.left = eval(e.clientX-dx)+'px';
+                    this.addEventListener("mouseup", function (){
+                        this.removeEventListener("mousemove", move, false)
+                    }, false);
+                }
+                this.addEventListener("mousemove", move, false);
+            }
+            
+            let grey = document.getElementsByClassName('bloc_grey');
+            let green = document.getElementsByClassName('bloc_green');
+            grey[0].addEventListener('click',dis_grey,false);
+            green[0].addEventListener('click',dis_green,false);
+            
+            grey[1].addEventListener('click',dis_grey,true);
+            green[1].addEventListener('click',dis_green,false);
+            
+            grey[2].addEventListener('click',dis_grey,false);
+            green[2].addEventListener('click',dis_green_stop,false);
+            
+            document.getElementsByClassName('bloc_grey_abs')[0].addEventListener('mousedown',deplace_grey,false);
+            document.getElementsByClassName('bloc_green_abs')[0].addEventListener('click',dis_green_stop,false);
+        </script>
+    </body>
+</html>
