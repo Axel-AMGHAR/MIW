@@ -9,7 +9,7 @@
         <h1>Todo</h1>
         <div id="app">
             <ul v-for='value in li' :key="value.id">
-                <li><input @keyup.enter="ajout_li" @input="li_input" v-model="value.titre" type="text"><button @click="_delete(value.id)"><img src="../img/error.png" alt="delete"></button></li>
+                <li><input @change="update(value)" @keyup.enter="ajout_li" @input="li_input" v-model="value.titre" type="text"><button @click="_delete(value)"><img src="../img/error.png" alt="delete"></button></li>
             </ul>
             <h2>Le nombre d'items non vide</h2>
             <div>MaxA:{{ MaxA }}</div>
@@ -55,13 +55,12 @@
 
                     },
 
-                    _delete: function(i){
-                        fetch(this.apiUri + 'todo/' + i, {
+                    _delete: function(value){
+                        fetch(this.apiUri + 'todo/' + value.id, {
                             method: "DELETE"
                         }).then( (data) => {
-                            console.log(li);
-                            console.log(this.li.i);
-                            this.li.splice(this.li.i,1);
+console.log(this.li.indexOf(value));
+                            this.li.splice(this.li.indexOf(value),1);
                         })
                         
                     },
