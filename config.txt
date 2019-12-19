@@ -1,0 +1,12 @@
+alias ll='ls -l'
+alias cdDoc='cd /mnt/c/wamp64/www/MIW'
+
+#alias git
+alias gs='git status'
+alias gp='git pull'
+alias ga.='git add .'
+alias gc='git commit'
+alias gps='git push'
+alias gacp='ga. ;gc ;gps;'
+alias grh='git reset HEAD'
+alias gd='git diff'
