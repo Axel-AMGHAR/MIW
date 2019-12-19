@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="da9b138a-af89-4ec6-8c74-c83c82fab60b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../PHP/images/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PHP/images/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PHP/images/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PHP/images/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PHP/images_redim/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PHP/images_redim/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PHP/images_redim/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PHP/images_redim/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MCD/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MCD/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MCD/.idea/MCD.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MCD/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MCD/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MCD/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MCD/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MCD/.idea/webServers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MCD/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/.idea/MVC.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/.idea/webServers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/controller/AccueilController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/controller/LivreController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/core/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/view/accueil/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/view/livre/detail_livre.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC/view/livre/display_livres.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/.idea/MVC_with_model.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/controller/AccueilController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/controller/AuteurController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/controller/LivreController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/core/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/core/Model.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/model/Auteur.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/model/Livre.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/todo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/view/accueil/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/view/auteur/detail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/view/auteur/liste.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/view/auteur/modifier.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/view/auteur/new.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/view/livre/detail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/view/livre/liste.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/view/livre/modifier.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/MVC_with_model/view/livre/new.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/.idea/mvc v0.3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/controller/IndexController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/controller/LivreController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/core/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/core/Model.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/model/Config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/model/Livre.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/portfolio.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/accueil/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/css/_layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/css/_menu.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/css/_polices.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/css/_reset.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/css/_svg.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/css/mon_site.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/css/mon_site.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/css/mon_site.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/index/background.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/layout.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/livre-layout.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/livre/ajaxListe.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/livre/detail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/livre/liste.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/livre/listeJson.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PHP/portfolio/view/livre/livreRandom.php" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\wamp64\www\MIW\PHP\MVC_with_model\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1U6xOrd7H72hSnCIrEG2qryFV3P" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../api" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="    " />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da9b138a-af89-4ec6-8c74-c83c82fab60b" name="Default Changelist" comment="" />
+      <created>1574690816534</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574690816534</updated>
+      <workItem from="1574690817707" duration="6578000" />
+      <workItem from="1574778165565" duration="1602000" />
+      <workItem from="1574842067210" duration="614000" />
+      <workItem from="1576497388570" duration="603000" />
+      <workItem from="1576501792101" duration="10179000" />
+      <workItem from="1576512263730" duration="887000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

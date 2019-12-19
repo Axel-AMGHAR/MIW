@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="099568b6-223a-4d2e-8669-8aa7b2771709" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../MVC_with_model/controller/ResponseController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MVC_with_model/controller/TicketController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MVC_with_model/controller/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MVC_with_model/model/Response.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MVC_with_model/model/Ticket.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MVC_with_model/model/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MVC_with_model/view/ticket/detail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MVC_with_model/view/ticket/liste.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MVC_with_model/view/ticket/new.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MVC_with_model/view/user/detail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MVC_with_model/view/user/liste.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MVC_with_model/view/user/new.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1V4OKnYV9vFUGkKQ2GqJEPzzCqF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../images_redim" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="099568b6-223a-4d2e-8669-8aa7b2771709" name="Default Changelist" comment="" />
+      <created>1576508838121</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576508838121</updated>
+      <workItem from="1576508839265" duration="9000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

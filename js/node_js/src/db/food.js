@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
 const foodShema = new mongoose.Schema({
-   _id: String,
     name: String,
     brand: String,
     bar_code: Number,
