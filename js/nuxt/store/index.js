@@ -1,10 +1,10 @@
 import { asyncGetData } from '~/common/api.js'
 
-export const state = () => []
+export const state = () => ({ products: []})
 
 export const mutations = {
   gotProducts(state, payload) {
-    state = payload
+    state.products = payload
   }
 }
 
