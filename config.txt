@@ -1,3 +1,5 @@
+#my configs
+
 alias ll='ls -l'
 alias cdDoc='cd /mnt/c/wamp64/www/MIW'
 
