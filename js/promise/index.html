@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script src="lib.js"></script>
+        <script src="biblio_ajax.js"></script>
+
+    </head>
+    <body>
+        <form action="">
+            <div>
+                <div>Référence de l'achat(1 to 5 caractères):</div>
+                <input type="text" class="achat" value="1">
+            </div>
+            <div>Résultat de la premiere requête Asynchrone :</div>
+            <div>
+                <div>Date de l'achat</div>
+                <div class="date_achat"></div>
+                <div>Montant de l'achat</div>
+                <div class="montant_achat"></div>
+                <div>Référence de la voiture</div>
+                <div class="ref_achat"></div>
+            </div>
+        </form>
+        <script>
+            cl(document.createElement('div', {id:'tes',class:'t'}));
+            
+            //test for jquery
+            $('<div>')
+        </script>
+        <script>
+
+
+            function exo2 (){
+
+
+                $('form').onsubmit = function (e){
+                    e.preventDefault();
+                    let achat = $('.achat');
+                    let num_achat = achat.value-1;
+                    if (num_achat >= 0 && num_achat <= 4){
+                        $get('./achat.json','').then(
+                            (json) => {
+                                let achats = JSON.parse(json.responseText);
+                                let date = achats[num_achat].date_achat;
+                                let montant = achats[num_achat].montant_achat;
+                                let ref = achats[num_achat].ref_voiture;
+
+                                $('.date_achat').html(date);
+                                $('.montant_achat').html(montant);
+                                $('.ref_achat').html(ref);
+                            }
+                        )
+                    } else {
+                        $('form').append();
+                    }
+
+
+                }
+
+
+
+            }
+
+            function exo1 (){
+
+                function asynchrone (resolve, reject, d){
+                    setTimeout(() => {
+                        let a = Math.random();
+                        console.log(a);
+                        if (a > d)
+                            resolve(a);
+                        else
+                            reject(a);
+
+                    })
+                }
+
+                console.log("début des requêtes Asynchrone")
+
+                asynchrone(
+                    (x)=>{ console.log(`1ère requête asynchrone réussie résultat= ${x}`);
+                          asynchrone(
+                              (y)=>{console.log(`2ième requête asynchrone réussie résultat = ${y}`);
+                                    console.log(x*y);
+                                    asynchrone(
+                                        (z)=>{console.log(`3ième requête asynchrone réussie résultat = ${z}`);
+                                              console.log(x*y*z);
+                                             },
+                                        (z)=>{console.log(`3ième requête asynchrone échouée résultat = ${z}`)},
+                                        0.5
+                                    )}
+                              ,
+                              (y)=>{console.log(`2ième requête asynchrone échouée résultat = ${y}`)},
+                              0.5
+                          )},
+                    (x)=>{console.log(`1ère requête asynchrone échouée résultat= ${x}`)},
+                    0.5
+                );
+            }
+
+            exo2();
+        </script>
+
+    </body>
+</html>
+
