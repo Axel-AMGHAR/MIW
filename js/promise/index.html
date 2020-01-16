@@ -29,11 +29,8 @@
 </div>-->
         </form>
         <script>
-            //test for jquery      
-/*
-            $('.mine').css({color:'yellow',backgroundColor:'red'}).text('test')
-*/
-            cl($('.test').css('be'));
+            //test for jquery
+            $('.mine').text('first').after_('test').text('second')
         </script>
         <script>
 
@@ -42,7 +39,7 @@
                     (json) => {
                         let achats = JSON.parse(json.responseText);
                         let num_achat = achats.length;
-                        $('.achat').prepend($('<div>').text(`Référence de l'achat(de 1 à ${num_achat}):`));
+                        $('.achat').prepend_($('<div>').text(`Référence de l'achat(de 1 à ${num_achat}):`));
                         $('form').onsubmit = function(e){
                             e.preventDefault();
                             let num_choisi = achat.value-1;
@@ -107,7 +104,7 @@
                 );
             }
 
-            exo2();
+            //exo2();
         </script>
 
     </body>
