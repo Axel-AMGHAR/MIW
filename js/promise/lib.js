@@ -1,22 +1,28 @@
 /**
 * TO DO
 *
-* function each pour les objets
+*  fonction each 
 */
 
+/**
+*   Copy functions to a prototype 
+*
+* @param {Object} objDest  -  the prototype where we want to add functions
+* @param {Object} objSourc -  list of functions
+*/
 function extend(objDest,objSourc){
     for(var i in objSourc){objDest[i]=objSourc[i]}
 }
 
 /**
-* select class, id or tagname or create an element 
+*   Select or create an element
 *
-* @param    selector
-* @return   one or multiple nodes(HTMLCollection)    
+* @param  {String} selector -a selector or a html element
+* @return {Node|NodeList}  
 */
 function $(selector){
     if (selector.substr(0,1) == '<'){
-        // Si on veut créer un élément
+        // If we want to create an element
         const regex = /\w+/g;
         const element = selector.match(regex)[0];
         let element_created = document.createElement(element);
@@ -25,7 +31,7 @@ function $(selector){
             element_created.setAttribute(attributes[i], attributes[i+1]);
         return element_created;
     } else{
-        // Si on veut selectionner un ou plusieurs elements
+        // If we want to select one or more elements
         return (document.querySelectorAll(selector).length == 1)?document.querySelector(selector):document.querySelectorAll(selector);
 
     }  
@@ -33,30 +39,42 @@ function $(selector){
 
 extend(Node.prototype,{
     /**
-    * Replace the content of a node with html
+    *   Replace the content of a Node with html/text
     *
-    * @param    html   
-    * @return   the same node     
+    * @param  {Html|String} html
+    * @return {Node}
     */
     html : function(html){
         this.innerHTML = html;
         return this;
     },
     /**
-    * Add text to the end of the content of a node
+    *  Add text at the end of a Node
     *
-    * @param    text   
-    * @return   the same node    
+    * @param  {String} text    
+    * @return {Node}   
     */
     text : function(text){
         this.appendChild(document.createTextNode(text));
         return this;
     },
-    append : function(element){
+    /**
+    *   Add a node or a text at the end of a Node
+    *
+    * @param  {String|Node} element    
+    * @return {Node}   
+    */
+    append_ : function(element){
         this.append(element);
         return this;
     },
-    prepend : function(element){
+    /**
+    *   Add a node or a text at the start of a Node
+    *
+    * @param  {String|Node} element    
+    * @return {Node}   
+    */
+    prepend_ : function(element){
         this.prepend(element);
         return this;
     }
@@ -64,10 +82,10 @@ extend(Node.prototype,{
 
 extend(NodeList.prototype,{
     /**
-    * Replace the content of one or more nodes with html
+    *   Replace the content of a NodeList with html/text
     *
-    * @param    html   
-    * @return   the same nodes     
+    * @param  {Html|String} html
+    * @return {NodeList}
     */
     html : function(html){
         for (let item of this){
@@ -79,48 +97,82 @@ extend(NodeList.prototype,{
         return this;
     },
     /**
-    * Add text to the end of the content of one ore more nodes
+    *   Add text to the end of the content of a NodeList 
     *
-    * @param    text   
-    * @return   the same nodes    
+    * @param  {String} text
+    * @return {NodeList}
     */
     text : function(text){
         for (let item of this)
             item.appendChild(document.createTextNode(text));
         return this;
     },
+    /**
+    *   Get the css value of a NodeList
+    * @param  {String} arguments[0] - a css property
+    * @return {Array} - Array of Object{ name_property: value_property } for each Nodes
+    *
+    *   Set one or more css properties for each Nodes
+    * @param {Object} arguments[0] - Object{ property: new_value }
+    * @return {NodeList}
+    *
+    *   Set one css value for each Nodes
+    *
+    * @param {String} argument[0] - a css property
+    * @param {String} argument[0] - the new value   
+    * @return {NodeList}
+    */
     css : function(){
+        let items = [];
         for (let item of this){
             if (typeof arguments[0] == 'object'){
-                cl(Object.keys(arguments[0]).length);
-                arguments[0].forEach( element => {
-                    item[arguments[0]]
-                });
-                
+                for (let item_obj in arguments[0])
+                    item.style[item_obj] = arguments[0][item_obj];
+            } else if (arguments.length == 2)
+                item.style[arguments[0]] = arguments[1];
+            else if (arguments.length == 1){
+                if (item.style[arguments[0]] == undefined)
+                    return console.error('Argument : [' + arguments[0] + '] doesn\'t exist');
+                let attr_object = {};
+                attr_object[arguments[0]] = item.style[arguments[0]];
+                items.push(attr_object);
+
+            } else {
+                console.error('0 or more than 2 arguments : ');
+                arguments.forEach( (elem) => {
+                    console.error(elem);
+                })
             }
         }
-        /*let items = [];
-        for (let item of this){
-            let styles = {}
-            for (let argument of arguments){
-                styles[argument] = item.style[argument];
-            }
-            items.push(styles);
-        }
-        return items;*/
+        if (arguments.length == 1)
+            return items;
+        return this;
     },
+    /**
+    *   Add a node or a text at the end of a NodeList
+    *
+    * @param  {String|Node} element
+    * @return {NodeList}
+    */
     append : function(element){
         for (let item of this){
             item.append(element);
         }
         return this;
     },
+    /**
+    *   Add a node or a text at the start of a NodeList
+    *
+    * @param  {String|Node} element    
+    * @return {NodeList}   
+    */
     prepend : function(element){
         for (let item of this){
             item.prepend(element);
         }
         return this;
     },
+    
     submit : function(){
         for (let item of this){
             item.submit();
@@ -128,3 +180,8 @@ extend(NodeList.prototype,{
         return this;
     }
 });
+
+/*??
+each : function(func){
+    func(index);
+}*/
