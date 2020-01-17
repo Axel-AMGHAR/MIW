@@ -7,7 +7,12 @@
 
     </head>
     <body>
-       <div class="mine" style="color: aqua"></div>
+        <ul>
+            <li>item number 1</li>
+            <li>item number 2</li>
+            <li>item number 3</li>
+        </ul>
+        <div class="mine" style="color: aqua"><div>aa</div></div>
         <div class="test" style="color: aqua"></div>
         <div class="test" style="color: aqua"></div>
         <form class='form' action="">
@@ -30,7 +35,16 @@
         </form>
         <script>
             //test for jquery
-            $('.mine').text('first').after_('test').text('second')
+            cl($('.mine').text('aa'))
+            cl($('.mine').html('<div>bb</div>').html())
+            $('.test').html(function(){
+                return 2+4;
+            }())
+/*            $('.test').html('te')*/
+/*            cl($('ul li').text(function( index ) {
+                return "item number " + ( index + 1 );
+            });)*/
+
         </script>
         <script>
 

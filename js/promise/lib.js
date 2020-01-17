@@ -9,6 +9,7 @@
 * finish after() and before()
 * css() handle the case to convert background-color into backgroundColor
 * see conputed style ( when the css is in other file)
+* value
 */
 
 /*??
@@ -51,24 +52,38 @@ function $(selector){
 
 extend(Node.prototype,{
     /**
+    *   Return html content of a node
+    * @return {String}
+    *
     *   Replace the content of a Node with html/text
     *
-    * @param  {Html|String} html
+    * @param  {Node|NodeList|String} html
     * @return {Node}
     */
-    html : function(html){
-        this.innerHTML = html;
-        return this;
+    html : function(){
+        if (arguments[0]){
+            this.innerHTML = arguments[0];
+            return this;
+        } else
+            return this.innerHTML;
+
     },
     /**
-    *  Add text at the end of a Node
+    *   Return only the textContent (without html) of a Node 
+    * @return {String} textContent
     *
-    * @param  {String} text    
+    *  Replace the text of a Node
+    * @param  {String} arguments[0]    
     * @return {Node}   
     */
-    text : function(text){
-        this.appendChild(document.createTextNode(text));
-        return this;
+    text : function(){
+        if (arguments[0]){
+            let text_node = document.createTextNode(arguments[0])
+            this.innerHTML = text_node;
+            return this;
+        }
+        else 
+            return this.textContent;
     },
     /**
     *   Get the css value of a Node
@@ -136,28 +151,36 @@ extend(NodeList.prototype,{
     /**
     *   Replace the content of a NodeList with html/text
     *
-    * @param  {Html|String} html
+    * @param  {Node|NodeList|String} html
     * @return {NodeList}
     */
     html : function(html){
-        for (let item of this){
-            if (typeof html === 'string')
-                item.innerHTML = html;
-            else
-                item.innerHTML = html.outerHTML;
-        }
+        for (let item of this)
+            item.innerHTML = html;
         return this;
     },
     /**
-    *   Add text to the end of the content of a NodeList 
+    *  Replace the text of a Node
     *
-    * @param  {String} text
-    * @return {NodeList}
+    * @param  {String} arguments[0]    
+    * @return {Node}   
     */
     text : function(text){
-        for (let item of this)
-            item.appendChild(document.createTextNode(text));
-        return this;
+        if (typeof arguments[0] === 'string'){
+            for (let item of this){
+                let text_node = document.createTextNode(arguments[0])
+                item.innerHTML = text_node;
+                return this;
+            }
+            return this;
+        } else if(arguments[0] === 'function'){
+            for (let item of this){
+                item.textContent(arguments[0](item));
+            }
+            return this;
+        } else 
+            return this.textContent;
+
     },
     /**
     *   Get the css value of a NodeList
