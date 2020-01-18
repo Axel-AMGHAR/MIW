@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+       <link rel="stylesheet" href="style.css">
         <meta charset="UTF-8">
         <script src="lib.js"></script>
         <script src="biblio_ajax.js"></script>
 
     </head>
     <body>
-        <ul>
-            <li>item number 1</li>
-            <li>item number 2</li>
-            <li>item number 3</li>
-        </ul>
-        <div class="mine" style="color: aqua"><div>aa</div></div>
-        <div class="test" style="color: aqua"></div>
-        <div class="test" style="color: aqua"></div>
         <form class='form' action="">
-            <div id="achat"></div>
-            <p></p>
-            <p></p>
-            <div class="achat"></div>
             <div class="achat">
                 <input type="text" class="num_achat" value="1">
             </div>
@@ -35,16 +24,6 @@
         </form>
         <script>
             //test for jquery
-            cl($('.mine').text('aa'))
-            cl($('.mine').html('<div>bb</div>').html())
-            $('.test').html(function(){
-                return 2+4;
-            }())
-/*            $('.test').html('te')*/
-/*            cl($('ul li').text(function( index ) {
-                return "item number " + ( index + 1 );
-            });)*/
-
         </script>
         <script>
 
