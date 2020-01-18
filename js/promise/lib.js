@@ -1,41 +1,39 @@
-
-/* TO DO 
-    -SUMMARY -
-    mettre quand l'on peut utiliser des functions et vérifier toutes les focntions pour voir si l'on peut le rajouter  */
 /**
 *   My lib
 *   Version 1.0
 *
-*** Summary:
+*** Summary
 * 
 ** General
-*   $(selector) - Select an element | create an element
+*   $(selector)         - Select an element | create an element
 *
 ** Node
-*   val()       - Return the value of a node | Set the value of a Node with text
-*   html()      - Return html content of a node | Replace the content of a Node with html/text
-*   text()      - Return only the textContent (without html) of a Node | Replace the text of a Node
-*   css()       - Get the css value of a Node | Set one or more css properties of a Node | Set one css value of a Node
-*   append_(element)   - Add a node or a text at the end of a Node
+*   val()               - Return the value of a node | Set the value of a Node with text
+*   html()              - Return html content of a node | Replace the content of a Node with html/text
+*   text()              - Return only the textContent (without html) of a Node | Replace the text of a Node
+*   css()               - Get the css value of a Node | Set one or more css properties of a Node | Set one css value of a Node
+*   append_(element)    - Add a node or a text at the end of a Node
 *   prepend_(element)   - Add a node or a text at the start of a Node   
 *   after_(element)     - Add a node or a text after this Node
 *   before_(element)    - Add a node or a text before this Node
 *
 ** NodeList
-*   val(new_value)      - Set the value of a NodeList with text
-*   html()
-*   text()
-*   css()
-*   append_()
-*   prepend_()
-*   after_()
-*   before_()
+*   val(new_value)      - Set the value of a NodeList with text | Set the value of a NodeList with text
+*   html(html)          - Replace the content of a NodeList with html/text | Replace the content of a NodeList with the return of a function(index)
+*   text(text)          - Replace the text of a Node with another text | Replace the content of a Node with the return of a function(index)
+*   css()               - Set one or more css properties for each Nodes | Set one css value for each Nodes
+*   append_(element)    - Add a node or a text at the end of a NodeList
+*   prepend_(element)   - Add a node or a text at the start of a NodeList
+*   after_(element)     - Add a node or a text after each Node
+*   before_(element)    - Add a node or a text before each Node
+*   first()             - Return the first element of a NodeList
+*   last()              - Return the last element of a NodeList
+*   submit()            - Submit a NodeList
+*   each(function)      - Apply a function for each Node
 *
-*
-*
-*
-*
-*
+** Inplementing functions
+*   is_one_arg(args, function_name) - Verify that there is only one argument
+*   extend(objDest,objSourc)        - Copy functions to a prototype
 *
 **/
 
@@ -216,8 +214,12 @@ extend(Node.prototype,{
 extend(NodeList.prototype,{
     /**
     *   Set the value of a NodeList with text
-    *
     * @param  {String} new_value
+    * @return {NodeList}
+    *
+    *   Set the value of a NodeList with text
+    * @param  {function} new_value - function(currentIndex)
+    * we can put different informations in function of index
     * @return {NodeList}
     */
     val : function(new_value){
@@ -233,13 +235,11 @@ extend(NodeList.prototype,{
     },
     /**
     *   Replace the content of a NodeList with html/text
-    * 
     * @param  {Node|NodeList|String} html
     * @return {NodeList}
     *
     *   Replace the content of a NodeList with the return of a function(index)
-    * 
-    * @param  {function} html - function with the index in parameter
+    * @param  {function} html - function(currentIndex)
     * we can put different informations in function of index
     * @return {NodeList}
     */
@@ -256,13 +256,11 @@ extend(NodeList.prototype,{
     },
     /**
     *  Replace the text of a Node with another text
-    *
     * @param  {String} text
     * @return {NodeList}
     *
-    *   Replace the content of a NNode with the return of a function(index)
-    * 
-    * @param  {function} html - function with the index in parameter
+    *   Replace the content of a Node with the return of a function(index)
+    * @param  {function} html - function(currentIndex)
     * we can put different informations in function of index
     * @return {NodeList}
     */
@@ -394,9 +392,9 @@ extend(NodeList.prototype,{
         return this;
     },
     /**
-    *   For each node make a function
+    *   Apply a function for each Node
     *
-    * @param {function(currentValue,currentIndex){}}
+    * @param {function} my_function - function(currentValue,currentIndex)
     * @return {NodeList}
     */
     each : function(my_function){
