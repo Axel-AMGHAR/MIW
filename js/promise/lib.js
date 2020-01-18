@@ -1,10 +1,52 @@
-/** My lib  **/
+
+/* TO DO 
+    -SUMMARY -
+    mettre quand l'on peut utiliser des functions et vérifier toutes les focntions pour voir si l'on peut le rajouter  */
+/**
+*   My lib
+*   Version 1.0
+*
+*** Summary:
+* 
+** General
+*   $(selector) - Select an element | create an element
+*
+** Node
+*   val()       - Return the value of a node | Set the value of a Node with text
+*   html()      - Return html content of a node | Replace the content of a Node with html/text
+*   text()      - Return only the textContent (without html) of a Node | Replace the text of a Node
+*   css()       - Get the css value of a Node | Set one or more css properties of a Node | Set one css value of a Node
+*   append_(element)   - Add a node or a text at the end of a Node
+*   prepend_(element)   - Add a node or a text at the start of a Node   
+*   after_(element)     - Add a node or a text after this Node
+*   before_(element)    - Add a node or a text before this Node
+*
+** NodeList
+*   val(new_value)      - Set the value of a NodeList with text
+*   html()
+*   text()
+*   css()
+*   append_()
+*   prepend_()
+*   after_()
+*   before_()
+*
+*
+*
+*
+*
+*
+*
+**/
 
 /**
-*   Select or create an element
+*   Select an element
+* @param  {String} selector 
+* @return {Node}
 *
-* @param  {String} selector -a selector or a html element
-* @return {Node|NodeList}  
+*   Create an element
+* @param  {String} selector - an html node(in string)
+* @return {Node|NodeList}
 */
 function $(selector){
     if (!is_one_arg(arguments, arguments.callee.name))return;
@@ -60,12 +102,12 @@ extend(Node.prototype,{
 
     },
     /**
-    *   Return only the textContent (without html) of a Node 
+    *   Return only the textContent (without html) of a Node
     * @return {String} textContent
     *
     *  Replace the text of a Node
-    * @param  {String} arguments[0]    
-    * @return {Node}   
+    * @param  {String} arguments[0]
+    * @return {Node}
     */
     text : function(){
         if (arguments[0]){
