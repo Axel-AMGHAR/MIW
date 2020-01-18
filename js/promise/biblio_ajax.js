@@ -6,7 +6,7 @@ $get=(url,data)=> {
             var result = new Array(); 
             for(var i in objet){ 
                 result.push(i+"="+encodeURIComponent(objet[i])); 
-            } 
+            }
             return result.join('&');
         };
 
@@ -33,7 +33,7 @@ $get=(url,data)=> {
             }
         }
 
-        url += "?"+getUrl(data)+"& cache="+new Date().getTime() ;
+        url += "?"+getUrl(data)+"& cache="+new Date().getTime();
         xhttp.open("get", url, true);
         xhttp.send();
     }
