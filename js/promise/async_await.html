@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <script src="lib.js"></script>
+        <script src="biblio_ajax.js"></script>
+    </head>
+    <body>
+        <form class='form' action="">
+            <div class="achat">
+                <input type="text" class="num_achat" value="1">
+            </div>
+        </form>
+        <div class="res"></div>
+
+        <script>
+
+            async function exo2(){
+                let response_achats = await fetch('./achat.json');
+                let purchases = await response_achats.json();
+                let num_achat = purchases.length;
+                $('.achat').prepend_($('<div></div>').text(`Référence de l'achat(de 1 à ${num_achat}):`));
+
+                $('form').onsubmit = async function(e){
+                    e.preventDefault();
+                    let car = null;
+                    $('.res').html(' ');
+                    if ($('.num_achat').val() > 0 && $('.num_achat').val() <= num_achat){
+                        let purchase = null;
+                        purchases.forEach( (element) => {
+                            if(element.ref_achat == $('.num_achat').val())
+                                purchase = element;
+                        });
+                        $('.res').append_($('<div></div>').text('Résultat de la premiere requête Asynchrone :'))
+                            .append_($('<div class="res_achat"></div>')
+                                     .append_($('<label>Date de l\'achat :</label>'))
+                                     .append_($('<input disabled/>').val(purchase.date_achat))
+                                     .append_($('<label>Montant de l\'achat :</label>'))
+                                     .append_($('<input disabled/>').val(purchase.montant_achat))
+                                     .append_($('<label>Référence de la voiture</label>'))
+                                     .append_($('<input disabled/>').val(purchase.ref_voiture))
+                                    );
+                        let response_cars = await fetch('./voiture.json');
+                        let cars = await response_cars.json();
+                        cars.forEach( (element) => {
+                            if(element.ref_voiture == purchase.ref_voiture)
+                                car = element;
+                        });
+                        $('.res').append_($('<div>Résultats de la deuxiéme requête asynchrone :</div>'))
+                            .append_($('<label>Nom du modèle :</label>'))
+                            .append_($('<input disabled/>').val(car.nom_modele))
+                            .append_($('<label>Code de la marque :</label>'))
+                            .append_($('<input disabled/>').val(car.code_marque));
+
+                        let response_brands = await fetch ('./marque.json');
+                        let brands = await response_brands.json();
+                        let brand = null;
+                        brands.forEach( (element) => {
+                            if(element.code_marque == car.code_marque)
+                                brand = element;
+                        });
+                        $('.res').append_($('<div>Résultats de la troisiéme requête asynchrone :</div>'))
+                            .append_($('<label>Nom de la marque :</label>'))
+                            .append_($('<input disabled/>').val(brand.nom_marque));
+                    }else
+                        $('.res').append_($('<div></div>').text(`Veuillez rentrer un nombre entre 1 et ${num_achat}`));
+                }
+            }
+
+            function exo1 (){
+
+                function asynchrone (resolve, reject, d){
+                    setTimeout(() => {
+                        let a = Math.random();
+                        console.log(a);
+                        if (a > d)
+                            resolve(a);
+                        else
+                            reject(a);
+
+                    })
+                }
+
+                console.log("début des requêtes Asynchrone")
+
+                asynchrone(
+                    (x)=>{ console.log(`1ère requête asynchrone réussie résultat= ${x}`);
+                          asynchrone(
+                              (y)=>{console.log(`2ième requête asynchrone réussie résultat = ${y}`);
+                                    console.log(x*y);
+                                    asynchrone(
+                                        (z)=>{console.log(`3ième requête asynchrone réussie résultat = ${z}`);
+                                              console.log(x*y*z);
+                                             },
+                                        (z)=>{console.log(`3ième requête asynchrone échouée résultat = ${z}`)},
+                                        0.5
+                                    )}
+                              ,
+                              (y)=>{console.log(`2ième requête asynchrone échouée résultat = ${y}`)},
+                              0.5
+                          )},
+                    (x)=>{console.log(`1ère requête asynchrone échouée résultat= ${x}`)},
+                    0.5
+                );
+            }
+
+            exo2();
+        </script>
+
+    </body>
+</html>
+
