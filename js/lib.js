@@ -1,6 +1,7 @@
 /**
 *   My lib
-*   Version 1.0
+*   Version 1.1
+*   Last updates : attr()
 *
 *** Summary
 * 
@@ -16,6 +17,10 @@
 *   prepend_(element)   - Add a node or a text at the start of a Node   
 *   after_(element)     - Add a node or a text after this Node
 *   before_(element)    - Add a node or a text before this Node
+*   attr()              - Return the value of an attribute of a Node | Set the attributes value of a Node | Set the attribute value of a Node
+*   hasClass(name)      - Use $(element).classList.contains('myClass');
+*   addClass()          - Use $(element).classList.add( String [, String] ), same for remove
+Toggle : .classList.toggle("visible"); si la class existe, la supprime, sinon l'ajouter
 *
 ** NodeList
 *   val(new_value)      - Set the value of a NodeList with text | Set the value of a NodeList with text
@@ -30,6 +35,7 @@
 *   last()              - Return the last element of a NodeList
 *   submit()            - Submit a NodeList
 *   each(function)      - Apply a function for each Node
+*   attr()              - Set the attributes value of an NodeList | Set the attribute value of an NodeList
 *
 ** Inplementing functions
 *   is_one_arg(args, function_name) - Verify that there is only one argument
@@ -206,8 +212,37 @@ extend(Node.prototype,{
 
         this.before(element);
         return this;
-    }
+    },
+    /**
+    *   Return the value of an attribute
+    * @param  {String} argument[0]    
+    * @return {String}
+    *
+    *   Set the attributes value of a Node
+    * @param  {Object} argument[0]    the css keys and values
+    * @return {Node}
+    *
+    *   Set the attribute value of a Node
+    * @param  {String} argument[0]    the css key
+    * @param  {String} argument[1]    the css value
+    * @return {Node}
+    * 
+    */
+    attr : function(){
+        if (arguments.length == 1){
+            if (typeof arguments[0] == 'object'){
+                for (const [key, value] of Object.entries(arguments[0]))
+                    this.setAttribute(key, value);
+            }
+            else if (typeof arguments[0] == 'string')
+                return this.getAttribute(arguments[0]);
+        } else if (arguments.length == 2){
+            this.setAttribute(arguments[0], arguments[1]);
+        }
+        return this;
+    } 
 });
+
 
 /** NodeList **/
 
@@ -403,6 +438,31 @@ extend(NodeList.prototype,{
         this.forEach(function(currentValue, currentIndex){
             my_function(currentValue, currentIndex);
         });
+        return this;
+    },
+    /**
+    *
+    *   Set the attributes value of a NodeList
+    * @param  {Object} argument[0]    the css keys and values
+    * @return {NodeList}
+    *
+    *   Set the attribute value of a NodeList
+    * @param  {String} argument[0]    the css key
+    * @param  {String} argument[1]    the css value
+    * @return {NodeList}
+    * 
+    */
+    attr : function(){
+        if (arguments.length == 1){
+            for (const [key, value] of Object.entries(arguments[0]))
+                this.forEach(function(currentValue){
+                    currentValue.setAttribute(key, value);
+                });
+        } else if (arguments.length == 2){
+            this.forEach(function(currentValue){
+                currentValue.setAttribute(arguments[0], arguments[1]);
+            });
+        }
         return this;
     }
 });
