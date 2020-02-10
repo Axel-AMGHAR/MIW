@@ -1,0 +1,11 @@
+parent: classic
+name: classic_child
+display_name: Classic_child theme
+version: 1.0.0
+author:
+  name: "PrestaShop Team"
+  email: "pub@prestashop.com"
+  url: "http://www.prestashop.com"
+
+assets:
+  use_parent_assets: true
