@@ -1,51 +1,56 @@
 /**
-*   My lib
-*   Version 1.1
-*   Last updates : attr()
-*
-*** Summary
-* 
-** General
-*   $(selector)         - Select an element | create an element
-*
-** Node
-*   val()               - Return the value of a node | Set the value of a Node with text
-*   html()              - Return html content of a node | Replace the content of a Node with html/text
-*   text()              - Return only the textContent (without html) of a Node | Replace the text of a Node
-*   css()               - Get the css value of a Node | Set one or more css properties of a Node | Set one css value of a Node
-*   append_(element)    - Add a node or a text at the end of a Node
-*   prepend_(element)   - Add a node or a text at the start of a Node   
-*   after_(element)     - Add a node or a text after this Node
-*   before_(element)    - Add a node or a text before this Node
-*   attr()              - Return the value of an attribute of a Node | Set the attributes value of a Node | Set the attribute value of a Node
-*   hasClass(name)      - Use $(element).classList.contains('myClass');
-*   addClass()          - Use $(element).classList.add( String [, String] ), same for remove
-Toggle : .classList.toggle("visible"); si la class existe, la supprime, sinon l'ajouter
-*
-** NodeList
-*   val(new_value)      - Set the value of a NodeList with text | Set the value of a NodeList with text
-*   html(html)          - Replace the content of a NodeList with html/text | Replace the content of a NodeList with the return of a function(index)
-*   text(text)          - Replace the text of a Node with another text | Replace the content of a Node with the return of a function(index)
-*   css()               - Set one or more css properties for each Nodes | Set one css value for each Nodes
-*   append_(element)    - Add a node or a text at the end of a NodeList
-*   prepend_(element)   - Add a node or a text at the start of a NodeList
-*   after_(element)     - Add a node or a text after each Node
-*   before_(element)    - Add a node or a text before each Node
-*   first()             - Return the first element of a NodeList
-*   last()              - Return the last element of a NodeList
-*   submit()            - Submit a NodeList
-*   each(function)      - Apply a function for each Node
-*   attr()              - Set the attributes value of an NodeList | Set the attribute value of an NodeList
-*
-** Inplementing functions
-*   is_one_arg(args, function_name) - Verify that there is only one argument
-*   extend(objDest,objSourc)        - Copy functions to a prototype
-*
-**/
+ *   My lib
+ *   Version 1.1
+ *   Last updates : attr()
+ *
+ *  To Add :
+ * - ClassList add/ remove .. to return the node
+ *
+ *** Summary
+ *
+ ** General
+ *   $(selector)         - Select an element | create an element
+ *
+ ** Node
+ *   val()               - Return the value of a node | Set the value of a Node with text
+ *   html()              - Return html content of a node | Replace the content of a Node with html/text
+ *   text()              - Return only the textContent (without html) of a Node | Replace the text of a Node
+ *   css()               - Get the css value of a Node | Set one or more css properties of a Node | Set one css value of a Node
+ *   append_(element)    - Add a node or a text at the end of a Node
+ *   prepend_(element)   - Add a node or a text at the start of a Node
+ *   after_(element)     - Add a node or a text after this Node
+ *   before_(element)    - Add a node or a text before this Node
+ *   attr()              - Return the value of an attribute of a Node | Set the attributes value of a Node | Set the attribute value of a Node
+ *   hasClass(name)      - Use $(element).classList.contains('myClass');
+ *   addClass()          - Use $(element).classList.add( String [, String] ), same for remove
+ Toggle : .classList.toggle("visible"); si la class existe, la supprime, sinon l'ajouter
+ *   remove()           - remove a Node : use .remove() of js
+ *   click()            - .click() de js (le click doit être parés la fonction du onclick de cet element)
+ *
+ ** NodeList
+ *   val(new_value)      - Set the value of a NodeList with text | Set the value of a NodeList with text
+ *   html(html)          - Replace the content of a NodeList with html/text | Replace the content of a NodeList with the return of a function(index)
+ *   text(text)          - Replace the text of a Node with another text | Replace the content of a Node with the return of a function(index)
+ *   css()               - Set one or more css properties for each Nodes | Set one css value for each Nodes
+ *   append_(element)    - Add a node or a text at the end of a NodeList
+ *   prepend_(element)   - Add a node or a text at the start of a NodeList
+ *   after_(element)     - Add a node or a text after each Node
+ *   before_(element)    - Add a node or a text before each Node
+ *   first()             - Return the first element of a NodeList
+ *   last()              - Return the last element of a NodeList
+ *   submit()            - Submit a NodeList
+ *   each(function)      - Apply a function for each Node
+ *   attr()              - Set the attributes value of an NodeList | Set the attribute value of an NodeList
+ *
+ ** Inplementing functions
+ *   is_one_arg(args, function_name) - Verify that there is only one argument
+ *   extend(objDest,objSourc)        - Copy functions to a prototype
+ *
+ **/
 
 /**
 *   Select an element
-* @param  {String} selector 
+* @param  {String} selector
 * @return {Node}
 *
 *   Create an element
@@ -66,7 +71,7 @@ function $(selector){
     } else{
         /** If we want to select one or more elements **/
         return (document.querySelectorAll(selector).length == 1)?document.querySelector(selector):document.querySelectorAll(selector);
-    }  
+    }
 }
 
 /** Node **/
@@ -118,12 +123,12 @@ extend(Node.prototype,{
             this.textContent = arguments[0];
             return this;
         }
-        else 
+        else
             return this.textContent;
     },
     /**
     *   Get the css value of a Node
-    * @param  {String} arguments[0] - a css property 
+    * @param  {String} arguments[0] - a css property
     * @return {String} - the css value
     *
     *   Set one or more css properties of a Node
@@ -133,7 +138,7 @@ extend(Node.prototype,{
     *
     *   Set one css value of a Node
     * @param {String} argument[0] - a css property
-    * @param {String} argument[0] - the new value   
+    * @param {String} argument[0] - the new value
     * @return {Node}
     */
     css : function(){
@@ -168,8 +173,8 @@ extend(Node.prototype,{
     /**
     *   Add a node or a text at the end of a Node
     *
-    * @param  {String|Node} element    
-    * @return {Node}   
+    * @param  {String|Node} element
+    * @return {Node}
     */
     append_ : function(element){
         if (!is_one_arg(arguments, arguments.callee.name))return;
@@ -180,8 +185,8 @@ extend(Node.prototype,{
     /**
     *   Add a node or a text at the start of a Node
     *
-    * @param  {String|Node} element    
-    * @return {Node}   
+    * @param  {String|Node} element
+    * @return {Node}
     */
     prepend_ : function(element){
         if (!is_one_arg(arguments, arguments.callee.name))return;
@@ -192,8 +197,8 @@ extend(Node.prototype,{
     /**
     *   Add a node or a text after this Node
     *
-    * @param  {String|Node} element    
-    * @return {Node}   
+    * @param  {String|Node} element
+    * @return {Node}
     */
     after_ : function(element){
         if (!is_one_arg(arguments, arguments.callee.name))return;
@@ -204,8 +209,8 @@ extend(Node.prototype,{
     /**
     *   Add a node or a text before this Node
     *
-    * @param  {String|Node} element    
-    * @return {Node}   
+    * @param  {String|Node} element
+    * @return {Node}
     */
     before_ : function(element){
         if (!is_one_arg(arguments, arguments.callee.name))return;
@@ -215,7 +220,7 @@ extend(Node.prototype,{
     },
     /**
     *   Return the value of an attribute
-    * @param  {String} argument[0]    
+    * @param  {String} argument[0]
     * @return {String}
     *
     *   Set the attributes value of a Node
@@ -226,7 +231,7 @@ extend(Node.prototype,{
     * @param  {String} argument[0]    the css key
     * @param  {String} argument[1]    the css value
     * @return {Node}
-    * 
+    *
     */
     attr : function(){
         if (arguments.length == 1){
@@ -240,7 +245,7 @@ extend(Node.prototype,{
             this.setAttribute(arguments[0], arguments[1]);
         }
         return this;
-    } 
+    }
 });
 
 
@@ -284,7 +289,7 @@ extend(NodeList.prototype,{
         this.forEach(function(currentValue, currentIndex){
             if(typeof html === 'function')
                 currentValue.innerHTML = html(currentIndex);
-            else 
+            else
                 currentValue.innerHTML = html;
         });
         return this;
@@ -305,7 +310,7 @@ extend(NodeList.prototype,{
         this.forEach(function(currentValue, currentIndex){
             if(typeof text === 'function'){
                 currentValue.textContent = text(currentIndex);
-            } else 
+            } else
                 currentValue.textContent = text;
         });
         return this;
@@ -321,7 +326,7 @@ extend(NodeList.prototype,{
     *
     *   Set one css value for each Nodes
     * @param {String} argument[0] - a css property
-    * @param {String} argument[0] - the new value   
+    * @param {String} argument[0] - the new value
     * @return {NodeList}
     */
     css : function(){
@@ -338,7 +343,7 @@ extend(NodeList.prototype,{
                 if (match)
                     arguments[0] = arguments[0].replace(arguments[0].substr(match.index,2), arguments[0].substr(match.index+1,1).toUpperCase());
                 item.style[arguments[0]] = arguments[1];
-            } else 
+            } else
                 console.error('0 or more than 2 arguments : ');
         }
         return this;
@@ -360,8 +365,8 @@ extend(NodeList.prototype,{
     /**
     *   Add a node or a text at the start of a NodeList
     *
-    * @param  {String|Node} element    
-    * @return {NodeList}   
+    * @param  {String|Node} element
+    * @return {NodeList}
     */
     prepend_ : function(element){
         if (!is_one_arg(arguments, arguments.callee.name))return;
@@ -374,8 +379,8 @@ extend(NodeList.prototype,{
     /**
     *   Add a node or a text after each Node
     *
-    * @param  {String|Node} element    
-    * @return {Node}   
+    * @param  {String|Node} element
+    * @return {Node}
     */
     after_ : function(element){
         if (!is_one_arg(arguments, arguments.callee.name))return;
@@ -388,8 +393,8 @@ extend(NodeList.prototype,{
     /**
     *   Add a node or a text before each Node
     *
-    * @param  {String|Node} element    
-    * @return {Node}   
+    * @param  {String|Node} element
+    * @return {Node}
     */
     before_ : function(element){
         if (!is_one_arg(arguments, arguments.callee.name))return;
@@ -417,7 +422,7 @@ extend(NodeList.prototype,{
     },
     /**
     *   Submit a NodeList
-    *  
+    *
     * @return {NodeList}
     */
     submit : function(){
@@ -450,7 +455,7 @@ extend(NodeList.prototype,{
     * @param  {String} argument[0]    the css key
     * @param  {String} argument[1]    the css value
     * @return {NodeList}
-    * 
+    *
     */
     attr : function(){
         if (arguments.length == 1){
@@ -485,7 +490,7 @@ function is_one_arg(args, function_name){
 }
 
 /**
-*   Copy functions to a prototype 
+*   Copy functions to a prototype
 *
 * @param {Object} objDest  -  the prototype where we want to add functions
 * @param {Object} objSourc -  list of functions
