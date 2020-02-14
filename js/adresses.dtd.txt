@@ -1,0 +1,18 @@
+<!DOCTYPE adresses
+[
+<!element adresses (adr_part | adr_entr)* >
+<!element adr_part (identite, adr, code_postal, ville) >
+<!attlist adr_part titre (Mr,Mme, Mlle) #REQUIRED >
+<!element adr_entr (nom, adr | boite_postale, code_postal, ville) >
+<!element titre (#PCDATA) >
+<!element identite (nom , prenom?) >
+<!element nom (#PCDATA) >
+<!element prenom (#PCDATA) >
+<!element adr (numero?, rue) >
+<!element rue (#PCDATA) >
+<!element numero (#PCDATA) >
+<!element boite_postale (#PCDATA) >
+<!element code_postal (#PCDATA) >
+<!element ville (#PCDATA) >
+]>
+
