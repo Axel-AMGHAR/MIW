@@ -5,6 +5,7 @@
  *
  *  To Add :
  * - ClassList add/ remove .. to return the node
+ * - remove attribute and list of attributes
  *
  *** Summary
  *

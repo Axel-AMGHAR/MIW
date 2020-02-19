@@ -19,25 +19,39 @@
                 </canvas>
             </div>
             <div class="results">
-                <div class='test'> Comment gagner : Mettez simplement 4 formes alignés </div><br />
+                <div class='test'> Comment gagner : Mettez simplement 4 formes alignées </div><br />
             </div>
         </div>
 
         <script>
             onload = function () {
-                $('.results')
-                    .append_($('<input class="prenom bouh" placeholder="tapez votre prenom" type="text" />'))
-                    .append_($('<input class="nom" placeholder="tapez votre nom" type="text" />'))
-                    .append_($('<input class="submit" value="valider" type="submit" />'))
+                let j1 = localStorage.getItem('j1') || 'joueur 1';
+                let j2 = localStorage.getItem('j2') || 'joueur 2';
+                let j1_score = localStorage.getItem('j1_score') || 0;
+                let j2_score = localStorage.getItem('j2_score') || 0;
+                let val_j1 = localStorage.getItem('j1') || ''
+                let val_j2 = localStorage.getItem('j2') || '';
 
-                $('.submit').onclick = function() {
-                    let j1 = $('.nom').val() || 'joueur 1';
-                    let j2 = $('.prenom').val() || 'joueur 2';
-                    $('.nom').attr({'readonly':'','disabled':''})
-                    $('.prenom').attr({'readonly':'','disabled':''})
-                    $('.test').attr('color','blue');
-                    console.log($('.prenom').classList.contains("bouh"))
-                    $('body').append($(`<div class="player_turn">C'est à ${j1} de choisir une case</div>`));
+                $('.results')
+                    .append_($(`<input class="j1" placeholder="nom joueur 1" type="text" value="${val_j1}" />`))
+                    .append_($(`<input class="j2" placeholder="nom joueur 2" type="text" value="${val_j2}" />`))
+                    .append_($('<input class="submit" value="valider" type="submit" />'))
+                    .append_($('<br />'))
+                    .append_($('<input type="submit" class="reset" value="reset grid" />'))
+                    .append_($('<br />'))
+                    .append_($('<div>Scores: </div>'))
+                    .append_($(`<div class="j1_score">${j1} : ${j1_score}</div>`))
+                    .append_($(`<div class="j2_score">${j2} : ${j2_score}</div>`))
+                    .append_($('<input class="clear_storage" value="reset local_storage" type="submit" />'));
+
+                $('.submit').onclick = function() {                        
+                    j1 = $('.j1').val() || j1 ;
+                    localStorage.setItem('j1', j1);
+                    j2 = $('.j2').val() || j2;
+                    localStorage.setItem('j2', j2);
+                    $('.j1').attr({'readonly':'','disabled':''})
+                    $('.j2').attr({'readonly':'','disabled':''})
+                    start();
                 };
 
                 function square(x_top ,y_top ,x_bottom, y_bottom ){
@@ -52,22 +66,6 @@
                     context.fillStyle = 'lightblue';
                     context.fill();
                 }
-
-                let canvas = $('.my_canvas');
-                let tab_morpion = new Array(5);
-                for (const [key] of tab_morpion.entries()){
-                    tab_morpion[key] = new Array(5);
-                    for (const [key2] of tab_morpion[key].entries())
-                        tab_morpion[key][key2] = 0;
-                }
-
-                // morpion creation 
-                for( let x = 0; x < 500; x+= 100){
-                    for (let y = 0; y < 500; y += 100){
-                        square(x,y,x+100,y+100);
-                    }
-                }
-                let user = 1;
 
                 function cross(x, y){
                     let context = canvas.getContext('2d');
@@ -91,13 +89,71 @@
                     context.stroke();
                 }
 
+                let canvas = $('.my_canvas');
+                let tab_morpion = JSON.parse(localStorage.getItem('tab_morpion')) || new Array(5);
+                let user;
+
+                function start(){
+                    // morpion creation 
+                    for( let x = 0; x < 500; x+= 100){
+                        for (let y = 0; y < 500; y += 100){
+                            square(x,y,x+100,y+100);
+                        }
+                    }
+                    if (JSON.parse(localStorage.getItem('tab_morpion'))){
+                        for (const [key] of tab_morpion.entries()){
+                            for (const [key2] of tab_morpion[key].entries()){
+                                if (tab_morpion[key][key2] == 1)
+                                    cross(parseInt(key2.toString()+45), parseInt(key.toString()+45));
+                                else if (tab_morpion[key][key2] == -1)
+                                    circle(parseInt(key2.toString()+45), parseInt(key.toString()+45))
+                            }
+                        }
+                    }else {
+                        tab_morpion = new Array(5);
+                        for (const [key] of tab_morpion.entries()){
+                            tab_morpion[key] = new Array(5);
+                            tab_morpion[key].fill(0,0, tab_morpion[key].length);
+                        }
+                    }
+
+                    localStorage.setItem('tab_morpion', JSON.stringify(tab_morpion));
+
+                    user = localStorage.getItem('user') || 1;
+                    if(NodeList.prototype.isPrototypeOf($('.player_turn')))
+                        $('body').append($(`<div class="player_turn">C'est à ${j1} de choisir une case</div>`));
+                    else 
+                        $('.player_turn').text(`C'est à ${j1} de choisir une case`)
+                    $('.j1_score').text(`${j1} : ${j1_score}`);
+                    $('.j2_score').text(`${j2} : ${j2_score}`);
+                }
+
+                start()
+
+                $('.reset').onclick = function(e){
+                    e.preventDefault();
+                    $('.j1').removeAttribute('readonly');
+                    $('.j1').removeAttribute('disabled');
+                    $('.j2').removeAttribute('readonly');
+                    $('.j2').removeAttribute('disabled');
+                    localStorage.removeItem('tab_morpion');
+                    localStorage.removeItem('user');
+                    start();
+                }
+
+                $('.clear_storage').onclick = function(e){
+                    e.preventDefault();
+                    localStorage.clear();
+                    document.location.reload(true);
+                }
+
                 function verify_line(){
                     for(let k = 0; k < tab_morpion.length; k++){
                         let e = tab_morpion[k];
                         let line_first = eval(e[0]+e[1]+e[2]+e[3]);
                         let line_second = eval(e[1]+e[2]+e[3]+e[4]);
-                        let column_first = eval(tab_morpion[0][k]+tab_morpion[1][k]+tab_morpion[2][k]+tab_morpion[3][k]+tab_morpion[4][k]);
-                        let column_second = eval(tab_morpion[0][k+1]+tab_morpion[1][k+1]+tab_morpion[2][k+1]+tab_morpion[3][k]+tab_morpion[4][k+1]);
+                        let column_first = eval(tab_morpion[0][k]+tab_morpion[1][k]+tab_morpion[2][k]+tab_morpion[3][k]);
+                        let column_second = eval(tab_morpion[1][k]+tab_morpion[2][k]+tab_morpion[3][k]+tab_morpion[4][k]);
                         if(line_first == 4 || line_second == 4 || column_first == 4 || column_second == 4)
                             return 1;
                         else if (line_first == -4 || line_second == -4 || column_first == -4 || column_second == -4)
@@ -123,13 +179,20 @@
                 }
 
                 function game(state){
-                    if (state == 0)
-                        return ;
-                    else if (state == 1)
-                        alert(`${j1} a gagné`)
+                    if (state == 1 || state == -1) {
+                        localStorage.removeItem('tab_morpion');
+                        localStorage.removeItem('user');
+                    }
+                    if(state == 1){
+                        localStorage.setItem('j1_score', ++j1_score);
+                        start();
+                    }
+                    else if (state == -1){
+                        localStorage.setItem('j2_score', ++j2_score);
+                        start();
+                    }
                     else 
-                        alert(`${j2} a gagné`)
-
+                        return;
                 }
 
                 function player_turn(){
@@ -142,28 +205,30 @@
                 canvas.onclick = function (e){
                     let x = e.clientX-8;
                     let y = e.clientY-8;
-
                     if ( (x < 90 || x.toString().substr(x.toString().length-2,2) < 90) && (y < 90 || y.toString().substr(y.toString().length-2,2) < 90)){
                         let tab_x = (x/100).toString().substr(0,1);
                         let tab_y = (y/100).toString().substr(0,1);
                         let pixel_x = parseInt(tab_x+45);
                         let pixel_y = parseInt(tab_y+45);
                         let verif_case = tab_morpion[tab_y][tab_x];
-                        if (user && verif_case == 0){
+                        if (user == 1 && verif_case == 0){
                             cross(pixel_x, pixel_y);
-                            user = 0;
+                            localStorage.setItem('user',user = 0);
                             tab_morpion[tab_y][tab_x] = 1;
                             player_turn();
+                            localStorage.setItem('tab_morpion', JSON.stringify(tab_morpion));
                             game(verify_diag());
                             game(verify_line());
                         } else if (user == 0 && verif_case == 0) {
                             circle(pixel_x, pixel_y);
-                            user = 1;
+                            localStorage.setItem('user',user = 1);
                             tab_morpion[tab_y][tab_x] = -1;
                             player_turn();
+                            localStorage.setItem('tab_morpion', JSON.stringify(tab_morpion));
                             game(verify_diag());
-                            game(verify_line());   
+                            game(verify_line());
                         }
+
                     }
                 }
             }

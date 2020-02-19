@@ -1,0 +1,3 @@
+- bouton reset
+- scores
+- enregistrer nom, partie en cours 
