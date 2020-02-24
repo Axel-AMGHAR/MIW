@@ -156,7 +156,6 @@
   156 => 'Symfony\\Component\\HttpKernel\\Controller\\ControllerResolverInterface',
   157 => 'Symfony\\Component\\HttpKernel\\Controller\\TraceableArgumentResolver',
   158 => 'Symfony\\Component\\HttpKernel\\Controller\\TraceableControllerResolver',
-  159 => 'PrestaShop\\Module\\PrestashopCheckout\\Entity\\OrderMatrice',
-  160 => 'PrestaShop\\Module\\PrestashopCheckout\\Entity\\PaypalAccount',
-  161 => 'PrestaShop\\Module\\PrestashopCheckout\\Entity\\PsAccount',
+  159 => 'PrestaShop\\Module\\PrestashopCheckout\\Entity\\PaypalAccount',
+  160 => 'PrestaShop\\Module\\PrestashopCheckout\\Entity\\PsAccount',
 );

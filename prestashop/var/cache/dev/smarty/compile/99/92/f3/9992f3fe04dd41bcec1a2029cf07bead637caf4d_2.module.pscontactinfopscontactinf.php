@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2020-02-10 15:24:40
+/* Smarty version 3.1.33, created on 2020-02-24 15:18:25
   from 'module:pscontactinfopscontactinf' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5e4167a86f16f7_93765708',
+  'unifunc' => 'content_5e53db31860346_42487137',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e4167a86f16f7_93765708 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e53db31860346_42487137 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- begin C:\wamp64_2\www\MIW\prestashop/themes/classic/modules/ps_contactinfo/ps_contactinfo.tpl -->
 <div class="block-contact col-md-3 links wrapper">
   <div class="hidden-sm-down">

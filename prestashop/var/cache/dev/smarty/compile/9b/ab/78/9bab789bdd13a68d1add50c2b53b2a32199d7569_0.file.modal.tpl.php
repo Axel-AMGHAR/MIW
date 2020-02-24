@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2020-02-10 15:27:55
+/* Smarty version 3.1.33, created on 2020-02-24 15:17:16
   from 'C:\wamp64_2\www\MIW\prestashop\admin_fjt\themes\default\template\helpers\modules_list\modal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5e41686bee0530_26629674',
+  'unifunc' => 'content_5e53daec4e5170_12723231',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e41686bee0530_26629674 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e53daec4e5170_12723231 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="modal fade" id="modules_list_container">
 	<div class="modal-dialog">
 		<div class="modal-content">

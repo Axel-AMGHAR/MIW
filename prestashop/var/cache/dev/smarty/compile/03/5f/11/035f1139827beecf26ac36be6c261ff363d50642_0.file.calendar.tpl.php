@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2020-02-10 15:27:55
+/* Smarty version 3.1.33, created on 2020-02-24 15:26:54
   from 'C:\wamp64_2\www\MIW\prestashop\admin_fjt\themes\default\template\helpers\calendar\calendar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5e41686bc661a4_22719188',
+  'unifunc' => 'content_5e53dd2eb28ba9_39429610',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e41686bc661a4_22719188 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e53dd2eb28ba9_39429610 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="datepicker" class="row row-padding-top hide">
 	<div class="col-lg-12">
 		<div class="daterangepicker-days">
