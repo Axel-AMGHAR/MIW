@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2020-02-24 15:18:24
+/* Smarty version 3.1.33, created on 2020-02-24 16:44:06
   from 'C:\wamp64_2\www\MIW\prestashop\modules\facebookcomments\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5e53db30ebc2d0_67310642',
+  'unifunc' => 'content_5e53ef4656e824_65873680',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e53db30ebc2d0_67310642 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e53ef4656e824_65873680 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('fcbc_appid', $_smarty_tpl->tpl_vars['var']->value['fcbc_appid']);
 $_smarty_tpl->_assignInScope('fcbc_admins', $_smarty_tpl->tpl_vars['var']->value['fcbc_admins']);
 $_smarty_tpl->_assignInScope('fcbc_lang', $_smarty_tpl->tpl_vars['var']->value['fcbc_lang']);
