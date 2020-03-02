@@ -1198,6 +1198,7 @@ class AdminContainer extends Container
                 64 => 'likeboxfree',
                 65 => 'facebookcomments',
                 66 => 'social_axel',
+                67 => 'axel_blog',
             ],
             'ps_cache_dir' => 'C:\\wamp64_2\\www\\MIW\\prestashop/var/cache/dev\\',
             'mail_themes_uri' => '/mails/themes',

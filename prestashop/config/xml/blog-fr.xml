@@ -6,6 +6,14 @@
     <language>fr</language>
      <atom:link href="https://www.prestashop.com/fr/blog/feed.xml" rel="self" type="application/rss+xml" />
       <item>
+    <title>Réussir sa migration de boutique PrestaShop</title>
+    <link>https://www.prestashop.com/fr/blog/reussir-migration-boutique-prestashop</link>
+    <description>Afin d&#039;optimiser son fonctionnement et bénéficier des dernières technologies digitales, PrestaShop apporte régulièrement des mises à jour à sa plateforme.</description>
+     <pubDate>Thu, 27 Feb 2020 17:50:30 +0100</pubDate>
+ <dc:creator>Nathanaël Jaskowiak</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/fr/blog/reussir-migration-boutique-prestashop</guid>
+  </item>
+  <item>
     <title>Cinq aspects juridiques à considérer pour votre projet e-commerce en 2020</title>
     <link>https://www.prestashop.com/fr/blog/aspects-juridiques-projet-e-commerce-2020</link>
     <description>Vous envisagez de lancer votre projet e-commerce avec PrestaShop ?</description>
@@ -76,14 +84,6 @@
      <pubDate>Mon, 27 Jan 2020 17:19:26 +0100</pubDate>
  <dc:creator>Maxime Varinard</dc:creator>
  <guid isPermaLink="false">https://www.prestashop.com/fr/blog/comment-migrer-vers-prestashop</guid>
-  </item>
-  <item>
-    <title>Comment recueillir l’opinion de vos clients ?</title>
-    <link>https://www.prestashop.com/fr/blog/comment-recueillir-lopinion-de-vos-clients</link>
-    <description>Prêter une attention toute particulière aux commentaires de ses clients et y donner suite est indispensable pour toute entreprise cherchant à fournir aux utilisateurs les produits répondant à leurs</description>
-     <pubDate>Thu, 23 Jan 2020 15:03:19 +0100</pubDate>
- <dc:creator>YATEO</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/fr/blog/comment-recueillir-lopinion-de-vos-clients</guid>
   </item>
   </channel>
 </rss>
