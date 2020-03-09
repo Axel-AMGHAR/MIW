@@ -4,6 +4,7 @@ if (!defined('_PS_VERSION_'))
     exit;
 
 require _PS_MODULE_DIR_.'axel_blog\classes\BlogCategory.php';
+require _PS_MODULE_DIR_.'axel_blog\classes\BlogPost.php';
 
 class axel_blog extends Module
 {
@@ -36,7 +37,18 @@ class axel_blog extends Module
          description TEXT, 
          PRIMARY KEY (id_blog_category)
          )');
-        $this->addTab('AdminBlogCategory','Bog category');
+
+        $bdd = DB::getInstance()->execute('CREATE TABLE IF NOT EXISTS '._DB_PREFIX_.'blog_post(
+        id_blog_post INT(11) NOT NULL AUTO_INCREMENT,
+        id_blog_category INT(11) NOT NULL,
+         title VARCHAR(100) NOT NULL, 
+         resume VARCHAR(100), 
+         description TEXT, 
+         PRIMARY KEY (id_blog_post)
+         )');
+
+        $this->addTab('AdminBlogCategory','Blog category');
+        $this->addTab('AdminBlogPost','Blog post');
         return parent::install()
             && $bdd;
 
@@ -49,8 +61,8 @@ class axel_blog extends Module
 
     public function getContent(){
 
-
-        return '<a href="'.Context::getContext()->link->getAdminLink('AdminBlogCategory').'">AdminBlogCategory</a>';
+        return '<a href="'.Context::getContext()->link->getAdminLink('AdminBlogCategory').'">AdminBlogCategory</a>
+                <a href="'.Context::getContext()->link->getAdminLink('AdminBlogPost').'">AdminBlogPost</a>';
     }
 
     public function addTab ($controller, $tabName)

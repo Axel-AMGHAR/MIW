@@ -9,6 +9,9 @@ class AdminBlogCategoryController extends ModuleAdminController
         $this->className = 'BlogCategory';
 
         parent::__construct();
+        $this->addRowAction('view');
+        $this->addRowAction('edit');
+        $this->addRowAction('delete');
 
         $this->fields_list = [
             'id_blog_category' => [
@@ -21,5 +24,30 @@ class AdminBlogCategoryController extends ModuleAdminController
                 'title' => $this->trans('Description', [], 'Admin.Global')
             ]
         ];
+    }
+
+    public function renderForm()
+    {
+        $this->fields_form = [
+            'input' => [
+                [
+                    'type' => 'text',
+                    'label' => 'Titre',
+                    'name' => 'title',
+                    'required' => true
+                ],
+                [
+                    'type' => 'textarea',
+                    'label' => 'Description',
+                    'name' => 'description',
+                    'required' => true
+                ]
+            ],
+            'submit' => [
+                'title' => $this->trans('Save', [], 'Admin.Action')
+            ]
+        ];
+
+        return parent::renderForm();
     }
 }

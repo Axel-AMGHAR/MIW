@@ -6,6 +6,22 @@
     <language>fr</language>
      <atom:link href="https://www.prestashop.com/fr/blog/feed.xml" rel="self" type="application/rss+xml" />
       <item>
+    <title>Comment optimiser sa stratégie d’e-mailing</title>
+    <link>https://www.prestashop.com/fr/blog/optimiser-strategie-e-mailing</link>
+    <description>L’e-mailing est un grand classique en termes de canaux de ventes: il est de loin l’un des plus efficaces à la disposition des e-commerçants.</description>
+     <pubDate>Fri, 06 Mar 2020 17:49:37 +0100</pubDate>
+ <dc:creator>YATEO</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/fr/blog/optimiser-strategie-e-mailing</guid>
+  </item>
+  <item>
+    <title>PrestaShop dévoile de nombreuses nouveautés pour votre boutique en ligne</title>
+    <link>https://www.prestashop.com/fr/blog/nouveautes-prestashop-2020</link>
+    <description>Au sommaire de cet article :</description>
+     <pubDate>Mon, 02 Mar 2020 10:39:36 +0100</pubDate>
+ <dc:creator>L&#039;équipe PrestaShop</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/fr/blog/nouveautes-prestashop-2020</guid>
+  </item>
+  <item>
     <title>Réussir sa migration de boutique PrestaShop</title>
     <link>https://www.prestashop.com/fr/blog/reussir-migration-boutique-prestashop</link>
     <description>Afin d&#039;optimiser son fonctionnement et bénéficier des dernières technologies digitales, PrestaShop apporte régulièrement des mises à jour à sa plateforme.</description>
@@ -68,22 +84,6 @@
      <pubDate>Mon, 03 Feb 2020 11:31:27 +0100</pubDate>
  <dc:creator>Arnaud Becker</dc:creator>
  <guid isPermaLink="false">https://www.prestashop.com/fr/blog/marketing-automation-ia</guid>
-  </item>
-  <item>
-    <title>KPI : explications et chiffres clés à connaître </title>
-    <link>https://www.prestashop.com/fr/blog/kpi-ecommerce-importants</link>
-    <description>Connaître et comprendre les KPI les plus importants permet à chaque entrepreneur de s’assurer du bon fonctionnement de son entreprise et de sa rentabilité.</description>
-     <pubDate>Thu, 30 Jan 2020 17:35:33 +0100</pubDate>
- <dc:creator>YATEO</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/fr/blog/kpi-ecommerce-importants</guid>
-  </item>
-  <item>
-    <title>Migrer son site e-commerce vers PrestaShop pour gagner en efficacité et en richesse fonctionnelle</title>
-    <link>https://www.prestashop.com/fr/blog/comment-migrer-vers-prestashop</link>
-    <description>Il y a plusieurs raisons de choisir de faire évoluer son site e-commerce vers une solution open source telle que PrestaShop.</description>
-     <pubDate>Mon, 27 Jan 2020 17:19:26 +0100</pubDate>
- <dc:creator>Maxime Varinard</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/fr/blog/comment-migrer-vers-prestashop</guid>
   </item>
   </channel>
 </rss>
