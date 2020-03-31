@@ -4,6 +4,8 @@ alias ll='ls -l'
 alias cdDoc='cd /mnt/c/wamp64/www/MIW'
 
 #alias git
+
+alias gsh='git show'
 alias gs='git status'
 alias gp='git pull'
 alias ga.='git add .'
